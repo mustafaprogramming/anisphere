@@ -1,4 +1,3 @@
-import Banner from '../../components/Banner'
 import ListsCards from '../../components/ListsCards'
 const page = () => {
   return (
