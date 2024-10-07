@@ -2,7 +2,8 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="absolute w-full h-screen bg-gradient-to-t from-orange-950 via-transparent to-orange-950 select-none">
+    <section className="absolute w-full h-screen 
+    overflow-hidden bg-gradient-to-t from-orange-950 via-transparent to-orange-950 select-none">
       <div className="absolute w-full h-full flex bg-gradient-to-t from-black via-transparent to-black">
 
           <Image
@@ -24,7 +25,7 @@ const Hero = () => {
           height={1000}
           objectFit="cover"  // Ensures the image fills the container without stretching
           className=" h-full mix-blend-overlay  md:block hidden"
-          style={{width:'34vw'}}
+          style={{width:'33vw'}}
 
           />
           <Image

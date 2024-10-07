@@ -2,13 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { FiAlignJustify } from "react-icons/fi";
-const links=[
-    {href:'/',label:'Home'},
-    {href:'/Movies',label:'Movies'},
-    {href:'/MostPopular',label:'Most Popular'},
-    {href:'/AnimeList',label:'Anime List'},
-    {href:'/Manga',label:'Manga'},
-]
+import {links} from '../../data'
 export default function Header() {
     const [show,setShow]=useState(false);
     const [size,setSize]=useState(0);
@@ -52,7 +46,7 @@ export default function Header() {
                     w-full
                     py-5
                     px-20
-                    sm:px-72
+                    sm:px-52
                     opacity-95
                     rounded-2xl
                     md:px-5

@@ -1,7 +1,8 @@
 import Banner from '../../components/Banner'
+import ListsCards from '../../components/ListsCards'
 const page = () => {
   return (
-      <Banner title='Anime List' subtitle='page under making' />
+      <ListsCards />
   )
 }
 
