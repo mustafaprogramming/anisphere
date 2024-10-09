@@ -5,7 +5,7 @@ import { animeList } from "@/data";
 import { useEffect, useState } from "react";
 import { FaClosedCaptioning , FaMicrophone , FaPlay ,FaPlus } from "react-icons/fa";
 
-const page = ({params}) => {
+const SingleAnimePage = ({params}) => {
   const id=parseInt(params.id)
   const [anime,setAnime]=useState(null);
   const [text,setText]=useState(false);
@@ -84,4 +84,4 @@ const page = ({params}) => {
   )
 }
 
-export default page
+export default SingleAnimePage
