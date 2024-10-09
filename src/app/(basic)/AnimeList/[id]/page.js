@@ -7,16 +7,13 @@ import { FaClosedCaptioning , FaMicrophone , FaPlay ,FaPlus } from "react-icons/
 
 const page = ({params}) => {
   const id=parseInt(params.id)
-  const [anime,setAnime]=useState(null)
-  const [text,setText]=useState(false)
-  const getAnime=()=>{
-    const anime=animeList.find((anime)=>anime.id===id);
-    if(!anime)return null
-    return anime
-  }
+  const [anime,setAnime]=useState(null);
+  const [text,setText]=useState(false);
+
   useEffect(()=>{
-    setAnime(getAnime)
-  },[id])
+    const Anime=animeList.find((anime)=>anime.id===id);
+    setAnime(Anime);
+  },[id]);
   if(!anime){
     return (
       <Banner title={'Loading'} />
