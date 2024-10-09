@@ -14,6 +14,7 @@ const page = ({params}) => {
     const Anime=animeList.find((anime)=>anime.id===id);
     setAnime(Anime);
   },[id]);
+  
   if(!anime){
     return (
       <Banner title={'Loading'} />
