@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { FiAlignJustify } from "react-icons/fi";
-import {links} from '../../data'
+import { links } from '@/data'; 
 export default function Header() {
     const [show,setShow]=useState(false);
     const [size,setSize]=useState(0);

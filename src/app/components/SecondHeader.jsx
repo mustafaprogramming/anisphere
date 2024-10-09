@@ -5,7 +5,7 @@ import { FiAlignJustify } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
 import Link from "next/link";
-import {links} from '../../data';
+import { links } from '@/data'; 
 
 const SignInAndSearch=({toggleSearch})=>{
  
@@ -30,26 +30,26 @@ const SecondHeader = () => {
   setShowSearch(!showSearch)
  }
   return (
-   <header className="w-full" style={{boxShadow:'0px 2px 30px rgb(0, 0, 0)'}}>
+   <header className="w-full relative z-40" >
    <section className="
    w-full relative h-fit flex lg:flex-row flex-col lg:items-center pl-3 pr-7 justify-center
    "
-   style={{background:' linear-gradient(to right ,#c2400cd3 ,#431407d3)'}}>
+   style={{background:' linear-gradient(to bottom ,#c2400cd3 ,transparent)'}}>
 
     <div className="flex items-center lg:w-fit w-full">
      <button className={`text-orange-100 lg:hidden block m-2
       ml-0 `} onClick={()=>setShow(!show)}>
                    <FiAlignJustify className='text-5xl inline-block transition-all' style={{rotate:show?"180deg":'0deg'}}/> 
      </button>
-     <h1 className="text-4xl lg:ml-12 font-bold mr-auto text-orange-100">Ani<span className="text-orange-500">Sphere</span></h1>
-     <div className="lg:hidden block  ">
+     <h1 className="sm:text-4xl text-2xl lg:ml-12 font-bold mr-auto  text-orange-100">Ani<span className="text-orange-500">Sphere</span></h1>
+     <div className="lg:hidden sm:block hidden">
      <SignInAndSearch toggleSearch={toggleSearch}/> 
     </div>
     </div>
-    {show&&<div className="w-full h-screen absolute top-0 bg-black opacity-50"></div>}
-    <nav className={`lg:static absolute left-0 top-0 
-     lg:mx-auto lg:h-fit h-screen lg:block lg:bg-transparent bg-black bg-opacity-90 
-     transition-all delay-100
+    {show&&<div className="w-full h-screen absolute top-0 left-0 bg-black opacity-50 z-50 lg:hidden"></div>}
+    <nav className={`lg:static z-50 absolute left-0 top-0
+     lg:h-fit h-screen lg:flex items-center lg:bg-transparent bg-black bg-opacity-90
+     transition-all delay-100 mx-auto
      ${!show &&'-translate-x-full'}
      lg:-translate-x-0
      `}>
@@ -67,9 +67,17 @@ const SecondHeader = () => {
                       </li>
                   })}                  
      </ul>
+     <div className="flex px-4 my-2">
+      <button className="bg-orange-400 hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-900 px-3 py-2 rounded-lg  font-semibold text-orange-100 lg:hidden block
+      w-full">
+          <Link href='/login'>
+          Sign In 
+          </Link>
+        </button>
+     </div>
     </nav>
-    <div className="lg:block hidden ">
-     <SignInAndSearch toggleSearch={toggleSearch}/> 
+    <div className={`lg:block hidden`}>
+      <SignInAndSearch toggleSearch={toggleSearch}/> 
     </div>
    </section>
    <aside className={`w-full h-14 flex items-center px-5 py-2 gap-4 ${!showSearch&&'hidden'}`}
