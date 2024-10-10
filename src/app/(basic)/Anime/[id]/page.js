@@ -36,7 +36,7 @@ const SingleAnimePage = ({params}) => {
           <h2 className="text-4xl font-semibold text-orange-100 capitalize my-5">{title}</h2>
           {EpCount && 
               <div className="flex font-bold text-xs gap-0.5 items-center my-6">
-                {PGrating && <span className="bg-white rounded-s-md px-1.5 py-0.5 flex items-center gap-1 uppercase">{PGrating}</span>}
+                {PGrating && <span className="bg-white rounded-s-md px-1.5 py-0.5 flex items-center gap-1 uppercase text-nowrap">{PGrating}</span>}
                 {quality && <span className="bg-pink-300 px-1.5 py-0.5 flex items-center gap-1">{quality}</span>}
                 {sub && <span className="bg-green-300 px-1.5 py-0.5 flex items-center gap-1"><FaClosedCaptioning /> {subEpCount}</span>}
                 {dub && <span className="bg-blue-300 px-1.5 py-0.5 flex items-center gap-1"><FaMicrophone  /> {dubEpCount}</span>}
@@ -52,7 +52,7 @@ const SingleAnimePage = ({params}) => {
             <button className="bg-white py-3 px-5 rounded-full md:text-xl sm:text-lg text-sm flex items-center gap-2 text-nowrap"><FaPlus className="text-sm"/> Add to list</button>
             </div>
 
-            <p className="my-5 text-sm text-orange-100 text-opacity-75 sm:block hidden max-h-32 overflow-y-scroll">
+            <p className="my-5 text-sm text-orange-100 text-opacity-75 sm:block hidden max-h-28 overflow-y-scroll">
             <span className="text-base block text-orange-100  font-semibold">Overview:</span>
               {text?description:description.substring(0,200)}
               {text?
