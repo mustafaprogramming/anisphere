@@ -1,6 +1,7 @@
 'use client';
 import ListsCards from '../../components/ListsCards'
 import { useGlobalContext } from "../../GlobalContext";
+
 const TopRated = () => {
   let {all}=useGlobalContext();
   all=all.filter(item=>item.rating>8)

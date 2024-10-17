@@ -1,6 +1,7 @@
 'use client';
 import ListsCards from '../../components/ListsCards'
 import { useGlobalContext } from "../../GlobalContext";
+
 const MostPopular = () => {
   let {all,top}=useGlobalContext();
   all=all.filter(item=>item.searches>300000)

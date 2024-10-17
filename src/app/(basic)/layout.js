@@ -1,5 +1,7 @@
 import SecondHeader from '../components/SecondHeader'
 import Footer from '../components/Footer'
+export const dynamic = 'force-dynamic';
+
 const layout = ({children}) => {
   return (
     <main className="w-full bg-orange-950">

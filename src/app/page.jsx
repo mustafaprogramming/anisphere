@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Hero from './components/Hero'
 import Info from './components/Info'
-
+export const dynamic = 'force-dynamic';
 
 function DefaultPage() {
   return (
