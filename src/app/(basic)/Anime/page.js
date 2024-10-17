@@ -1,8 +1,11 @@
+'use client';
 import ListsCards from '../../components/ListsCards'
-const page = () => {
+import { useGlobalContext } from "../../GlobalContext";
+const AnimePage = () => {
+  const {anime,topAnime}=useGlobalContext();
   return (
-      <ListsCards />
+      <ListsCards array={anime} topArray={topAnime} title='Anime'/>
   )
 }
 
-export default page
+export default AnimePage

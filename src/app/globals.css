@@ -22,19 +22,98 @@ input[type='text']:active,input[type='text']:hover {
     outline-color: #ea5a0cb9;
     outline-style: solid;
 }
-.underline-link::after {
-    content: '';
-    width: 0;
-    height: 2px;
-    position: absolute;
-    left: 50%;    
-    translate: -50% 0%;
-    z-index: 100;
-    bottom: -5px;
-    border-radius: 5px;
-    background: #FED7AA;
-    transition: all ease 0.5s;
+
+.top-10-li:hover>h4{
+    opacity: 1;
 }
-.underline-link:hover::after {
-    width: 100%;
+.anis-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center center;
+    filter: blur(20px);
+    opacity: .35;
+    transform: scale(1.2);
+}
+.anis-cover-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    filter: grayscale(1);
+}
+
+
+.slider-center{
+    left: 50%;
+    z-index: 6;
+}
+.slider-left{
+    left: -50%;
+    z-index: 2;
+}
+.slider-right{
+    left: 150%;
+    z-index: 2;
+}
+.slider-top{
+    left: 150%;
+    z-index: 1;
+    visibility: hidden;
+}
+.carousel-shade-r{
+    background: linear-gradient(to right,#431407,transparent,#431407);
+}
+.carousel-shade-t{
+    background:linear-gradient(to top,#431407,transparent,transparent,#431407)
+}
+.carousel{
+    transition: all ease-in 0.1s ;
+}
+@media (min-width: 768px) {
+    .carousel-shade-r{
+        background: linear-gradient(to right,#0f172a,transparent,#0f172a);
+    }
+    .carousel-shade-t{
+        background:linear-gradient(to top,#0f172a,transparent,transparent,#0f172a)
+    }
+    .slider-left{
+        left: -15%;
+    }
+    .slider-right{
+        left: 115%;
+    }
+    .slider-top{
+        left: 115%;
+    }
+    .carousel{
+        transition:all ease-in-out 0.4s;
+    }
+}
+.spinner{
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    width: 45px;
+    height: 45px;
+    top: 50%;
+    left: var(--order);
+    translate: -50% -50%;
+    animation: loader 2s infinite ;
+    animation-delay: var(--time);
+}
+@keyframes loader {
+    50%{
+        width: 15px;
+        height: 15px;
+    }
+    100%{
+        width: 45px;
+        height: 45px;
+    }
 }

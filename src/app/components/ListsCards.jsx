@@ -1,11 +1,17 @@
 import Anime from './Anime'
 import Top10 from './Top10'
-const ListsCards = () => {
+
+
+const ListsCards = ({array,topArray,title}) => {
   return (
-    <main className="flex xl:flex-row flex-col my-12 xl:ms-12 gap-2">
-      <Anime />
-      <Top10 />
-    </main>
+    <section className="xl:mt-20 flex xl:flex-row flex-col my-4 gap-2 ">
+      <main>
+        <Anime array={array} title={title}/> 
+      </main>
+      <aside>
+        <Top10  array={topArray} />
+      </aside>
+    </section>
   )
 }
 

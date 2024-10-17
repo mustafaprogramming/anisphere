@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model Anime {
+  id String @id @default(uuid()) @unique
+  title String
+  JpName String
+  link String
+  image String
+  description String
+  sub Boolean @default(true)
+  dub Boolean @default(true)
+  quality String @default("hd")
+  searches BigInt
+  isAdult Boolean
+  PGrating String
+  EpCount Int
+  subEpCount Int
+  dubEpCount Int
+  EpDuration Int
+  premier String
+  Status String
+  aired String
+  rating String
+  anime Boolean @default(true)
+  movie Boolean
+}
+model Link {
+  id String @id @default(uuid()) @unique
+  label String
+  href String
+}

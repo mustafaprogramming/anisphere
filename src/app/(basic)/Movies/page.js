@@ -1,8 +1,12 @@
-import Banner from '../../components/Banner'
-const page = () => {
+'use client';
+import ListsCards from '../../components/ListsCards'
+import { useGlobalContext } from "../../GlobalContext";
+const Movies = () => {
+  const {movies,topMovies}=useGlobalContext();
   return (
-      <Banner title='Movies' subtitle='page under making' />
+      <ListsCards array={movies} topArray={topMovies} title='Movies'/>
   )
 }
 
-export default page
+export default Movies
+

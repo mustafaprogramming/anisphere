@@ -10,9 +10,9 @@ const Hero = () => {
           src="/sukuna.jpeg"
           alt="background"
           quality={100}
-          width={1000}
-          height={1000}
-          objectFit="cover"  // Ensures the image fills the container without stretching
+          priority
+          width={500}
+          height={500}  // Ensures the image fills the container without stretching
           className=" h-full mix-blend-overlay  md:block hidden"
           style={{width:'33vw'}}
           />
@@ -21,9 +21,9 @@ const Hero = () => {
           src="/tanjiro.jpeg"
           alt="background"
           quality={100}
-          width={1000}
-          height={1000}
-          objectFit="cover"  // Ensures the image fills the container without stretching
+          width={500}
+          priority
+          height={500}  // Ensures the image fills the container without stretching
           className=" h-full mix-blend-overlay  md:block hidden"
           style={{width:'33vw'}}
 
@@ -32,9 +32,9 @@ const Hero = () => {
           src="/yorforger.jpeg"
           alt="background"
           quality={100}
-          width={1000}
-          height={1000}
-          objectFit="cover"  // Ensures the image fills the container without stretching
+          width={500}
+          height={500}
+          priority  // Ensures the image fills the container without stretching
           style={{width:'33vw'}}
           className=" h-full mix-blend-overlay  md:block hidden"
           />
@@ -44,9 +44,8 @@ const Hero = () => {
           alt="background"
           quality={100}
           fill
-          sizes="100vw"
-          objectFit="cover"  // Ensures the image fills the container without stretching
-          className=" h-full mix-blend-overlay md:hidden sm:block hidden  "
+          sizes="100vw"  // Ensures the image fills the container without stretching
+          className=" h-full w-screen mix-blend-overlay md:hidden sm:block hidden"
           />
           
           <Image
@@ -54,9 +53,8 @@ const Hero = () => {
           alt="background"
           quality={100}
           fill
-          sizes="100vw"
-          objectFit="cover"  // Ensures the image fills the container without stretching
-          className=" h-full mix-blend-overlay sm:hidden block "
+          sizes="100vw"  // Ensures the image fills the container without stretching
+          className="h-full w-screen mix-blend-overlay sm:hidden block"
           />
           
       </div>
