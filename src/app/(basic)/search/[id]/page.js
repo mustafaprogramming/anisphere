@@ -1,5 +1,4 @@
 'use client'
-import Banner from '@/app/components/Banner'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import {
@@ -7,7 +6,8 @@ import {
   FaMicrophone,
   FaPlay,
   FaPlus,
-} from 'react-icons/fa'
+} from 'react-icons/fa';
+import Loading from '../../loading';
 import { useGlobalContext } from '@/app/GlobalContext'
 import ListsCards from '@/app/components/ListsCards'
 import Image from 'next/image'
@@ -27,7 +27,7 @@ const SingleAnimePage = ({ params }) => {
   }, [id,all])
 
   if (!Anime) {
-    return <Banner title={'Loading'} />
+    return <Loading />
   }
   const {
     image,
