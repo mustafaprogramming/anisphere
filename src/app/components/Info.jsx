@@ -33,7 +33,8 @@ const Info = () => {
         <p className='text-orange-100 font-thin sm:text-base text-sm flex flex-wrap'>
           <b className='font-bold sm:text-base text-sm '>Top search:</b>
           {top.map((anime)=>{
-            return <span  key={anime.id} className="max-w-40 break-all text-wrap ml-1 line-clamp-1  hover:text-orange-300 "><Link href={'/search/'+anime.id}>{anime.title}</Link>,</span>
+            return <span  key={anime.id}>
+              <Link className="max-w-40 break-all text-wrap ml-1 line-clamp-1  hover:text-orange-300 " href={'/search/'+anime.id}>{anime.title}</Link>,</span>
           })}
         </p>
         <Link href='/watch-anime' >

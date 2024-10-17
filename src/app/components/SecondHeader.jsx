@@ -13,7 +13,7 @@ const AnimeName=({NameType,toggleName})=>{
     <div className="flex flex-col items-center gap-1 pt-1">
       <button className="rounded-sm px-1 py-0.5 text-xs relative uppercase flex items-center w-fit gap-5 
             text-orange-100 bg-white bg-opacity-70" onClick={toggleName}>
-              <span className={`bg-orange-500 w-2/4 h-full absolute ${NameType?'left-0 rounded-s-sm':'right-0 rounded-e-sm'}`}></span>
+              <span className={`bg-orange-500 w-2/4 h-full absolute ${NameType?'left-0 rounded-s-sm':'right-0 rounded-e-sm'} transition-all`}></span>
               <span className={`${!NameType?'text-black':'font-bold'} relative`}>
               en
               </span>

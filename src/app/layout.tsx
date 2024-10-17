@@ -6,7 +6,11 @@ import prisma from "../../utils/db";
 
 
 const prismaHandlers=async ()=>{
-  const links=await prisma.link.findMany()
+  const links=await prisma.link.findMany({
+    orderBy:{
+      order:'asc'
+    },
+  })
   const movies=await prisma.anime.findMany({
     where:{
       movie:true

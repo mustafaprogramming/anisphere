@@ -95,6 +95,11 @@ input[type='text']:active,input[type='text']:hover {
         transition:all ease-in-out 0.4s;
     }
 }
+@media (max-width: 480px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
 .spinner{
     position: absolute;
     border-radius: 50%;

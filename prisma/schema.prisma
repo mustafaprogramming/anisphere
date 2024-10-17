@@ -40,4 +40,5 @@ model Link {
   id String @id @default(uuid()) @unique
   label String
   href String
+  order Int @default(autoincrement())
 }

@@ -42,7 +42,7 @@ const Carousel = ({array}) => {
     return <></>
   }
   return (
-   <main className="w-full xl:h-4/6 md:h-3/6 h-2/4 xl:mt-24 xl:mb-10 md:my-10 mb-10 relative overflow-x-hidden " style={{maxHeight:'450px'}}>
+   <main className="w-full xl:h-4/6 md:h-3/6 h-2/5 xl:mt-24 xl:mb-10 md:my-10 mb-10 relative overflow-x-hidden " style={{maxHeight:'450px'}}>
     <div className="md:flex hidden font-semibold lg:text-5xl md:text-3xl text-2xl absolute justify-between items-center w-full h-full px-6" style={{zIndex:'5'}}>
      <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-orange-400 active:opacity-20 active:border active:border-orange-600  text-white active:text-orange-500" onClick={(event)=>sliderMove(event,'dec')}><FaAngleLeft /></button>
      <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-orange-400 active:opacity-20 active:border active:border-orange-600  text-white active:text-orange-500" onClick={(event)=>sliderMove(event)}><FaAngleRight /></button>

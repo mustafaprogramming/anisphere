@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 
 const ResultsPage = ({ params }) => {
-  const name = params.name.split('%20').join(' ').split('%3A').join(':')
+  const name = params.name.split('%20').join(' ').split('%3A').join(':').split('%3B').join(';')
   const { top , topAll} = useGlobalContext(name);
   const [results,setResults]=useState([]);
   useEffect(()=>{
