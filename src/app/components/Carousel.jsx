@@ -68,9 +68,9 @@ const Carousel = ({array}) => {
      let style='slider-top';
      if(index==Index){
       style='slider-center'
-     }else if(index==Index-1||Index==0&&index==9){
+     }else if(index==Index-1||Index==0&&index==(array.length-1)){
       style='slider-left '
-     }else if(index==Index+1||Index==9&&index==0){
+     }else if(index==Index+1||Index==(array.length-1)&&index==0){
       style='slider-right '
      }
      return (

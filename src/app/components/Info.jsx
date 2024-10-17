@@ -36,7 +36,7 @@ const Info = () => {
             return <span  key={anime.id} className="max-w-40 break-all text-wrap ml-1 line-clamp-1  hover:text-orange-300 "><Link href={'/search/'+anime.id}>{anime.title}</Link>,</span>
           })}
         </p>
-        <Link href='/anime' >
+        <Link href='/watch-anime' >
             <button type="button" className=" bg-orange-200 hover:bg-gradient-to-r hover:from-orange-300 hover:to-orange-600 rounded-lg p-3 pl-7 font-bold mt-8 mb-3
         ">
             Watch anime
