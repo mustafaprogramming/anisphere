@@ -165,23 +165,26 @@ const SingleAnimePage = ({ params }) => {
           </aside>
         </article>
         <aside
-          className='p-4 lg:py-10 lg:px-6 sm:mb-0  lg:-translate-x-5 bg-orange-400 bg-opacity-10 flex-1 h-auto flex flex-col text-orange-100 gap-2'
+          className='p-4 lg:py-10 lg:px-6 sm:mb-0  lg:-translate-x-5 bg-orange-400 bg-opacity-10 flex-1 h-auto flex flex-col text-orange-100 gap-2 relative'
           style={{ fontSize: '13px' }}
         >
           <p className=' sm:hidden block  text-orange-100 text-opacity-75 '>
-            <span className='mb-2 block text-orange-100  font-bold'>
+            <span className='mb-2 block text-sm text-orange-100  font-bold'>
               Overview:
             </span>
             {text ? description : description.substring(0, 200)}
-            {text ? (
-              <button className='font-bold' onClick={() => setText(false)}>
-                &nbsp; -Less
-              </button>
-            ) : (
-              <button className='font-bold' onClick={() => setText(true)}>
-                ... + More
-              </button>
-            )}
+              {text ? (
+                <button
+                  className='font-bold'
+                  onClick={() => setText(false)}
+                >
+                  &nbsp; -Less
+                </button>
+              ) : (
+                <button className='font-bold' onClick={() => setText(true)}>
+                  ... + More
+                </button>
+              )}
           </p>
           <p className='font-bold '>
             Japanese: <span className='ms-1.5 font-thin'>{JpName}</span>
@@ -203,7 +206,7 @@ const SingleAnimePage = ({ params }) => {
           </p>
 
           <p
-            className={`mt-3   sm:hidden block  text-orange-100 text-opacity-75 `}
+            className={`mt-3 sm:hidden block  text-orange-100 text-opacity-75 `}
           >
             AniSphere is the best site to watch <strong>{title}</strong>
           </p>
