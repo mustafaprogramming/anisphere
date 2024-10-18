@@ -6,6 +6,7 @@ export const useGlobalContext=()=>useContext(globalContext)
 
 const GlobalContext = ({data,children}) => {
   const [NameType,setNameType]=useState(true);
+
   const toggleName=()=>setNameType(!NameType)
   return (
     <globalContext.Provider value={{...data,NameType,toggleName}}>

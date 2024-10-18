@@ -1,8 +1,7 @@
 'use client';
-import { FaFilter } from "react-icons/fa";
+import { FaAngleLeft, FaFilter } from "react-icons/fa";
 import { IoSearchSharp } from "react-icons/io5";
 import { FiAlignJustify } from "react-icons/fi";
-import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
 import Link from "next/link";
 import Searches from './Searches'
@@ -28,7 +27,6 @@ const AnimeName=({NameType,toggleName})=>{
   )
 }
 const SignInAndSearch=({toggleSearch})=>{
- 
  return (
     <div className="flex items-center xs:gap-5 xxs:gap-3 gap-1 text-orange-100 ">
         <button onClick={toggleSearch} className="1xl:hidden">
@@ -42,56 +40,62 @@ const SignInAndSearch=({toggleSearch})=>{
       </div>
  )
 }
-const Search=({searchValue,setSearchValue})=>{
+const Search=({searchValue,setSearchValue,searchValueOutput})=>{
+  let inputVal=searchValue.split('%23').join('#').split("%2F").join('/').split("%5C").join('\\');
   return(
     <section className="w-96 hidden 1xl:flex relative flex-col">
         <div className="items-center w-full relative flex">
-        <input type="text" id="searchAnime" value={searchValue} onChange={(event)=>setSearchValue(event.target.value)} className="py-2 px-4  flex-1 bg-white font-semibold text-orange-900" placeholder="Search anime..." /> 
-        <div className="absolute right-1 flex items-center gap-2">
-        <Link href={`/result/${searchValue}`}>
-          <IoSearchSharp  className="text-2xl text-orange-600 hover:text-orange-400 active:text-orange-950"/> 
-        </Link>
-        <Link href={`/filter`} className="bg-orange-500  font-semibold text-orange-100 my-2 px-1 py-0.5 text-sm rounded-md">
-        filter
-        </Link>
-        </div>
+          <input type="text" value={inputVal} onChange={(event)=>searchValueOutput(event.target.value)} className="py-2 px-4  flex-1 bg-white font-semibold text-orange-900" placeholder="Search anime..." /> 
+          <div className="absolute right-1 flex items-center gap-2">
+          <Link href={`/result/?keyword=${searchValue}`} onClick={()=>setSearchValue('')}>
+            <IoSearchSharp  className="text-2xl text-orange-600 hover:text-orange-400 active:text-orange-950"/> 
+          </Link>
+          <Link href={`/filter`} className="bg-orange-500  font-semibold text-orange-100 my-2 px-1 py-0.5 text-sm rounded-md">
+          filter
+          </Link>
+          </div>
         </div>
         {searchValue && 
         <aside className="w-full mt-10 absolute top-0 left-0">
-          <Searches searchValue={searchValue}/>
+          <Searches searchValue={searchValue} setSearchValue={setSearchValue}/>
         </aside>
         }
     </section>
   )
 }
-const SearchBar=({showSearch,searchValue,setSearchValue})=>{
+const SearchBar=({showSearch,searchValue,setSearchValue,searchValueOutput})=>{
+  let inputVal=searchValue.split('%23').join('#').split("%2F").join('/').split("%5C").join('\\');
   return(
-    <section className="w-full 1xl:hidden flex flex-col">
+    <section className="w-full 1xl:hidden bg-orange-950 flex flex-col">
       <aside className={`w-full h-14 flex items-center px-5 py-2 gap-4 ${!showSearch&&'hidden'}`}>
         <Link href='/filter' className="bg-orange-500 hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-800 px-3 py-2 rounded-lg  font-semibold text-orange-100">
         <FaFilter  className='text-1xl inline-block'/> 
         </Link>
         <div className="flex items-center w-full">
-        <input type="text" id="searchAnime" value={searchValue} onChange={(event)=>setSearchValue(event.target.value)} className="py-2 px-4  flex-1 bg-white rounded-lg font-semibold text-orange-900" placeholder="Search anime..."/> 
-        <Link href={`/result/${searchValue}`} className="absolute right-2 bg-white rounded-lg -translate-x-2/4 ">
+        <input type="text" value={inputVal} onChange={(event)=>searchValueOutput(event.target.value)} className="py-2 px-4  flex-1 bg-white rounded-lg font-semibold text-orange-900" placeholder="Search anime..."/> 
+        <Link href={`/result/?keyword=${searchValue}`} onClick={()=>setSearchValue('')} className="absolute right-2 bg-white rounded-lg -translate-x-2/4 ">
           <IoSearchSharp  className="text-4xl text-orange-600 hover:text-orange-400 active:text-orange-950"/> 
         </Link>
         </div>
       </aside>
-      <div className={`${showSearch?'flex':'hidden'}`}>
-        {searchValue && <Searches searchValue={searchValue}/>}
-      </div>
+        <div className={`${showSearch?'flex':'hidden'}`}>
+          {searchValue && <Searches searchValue={searchValue} setSearchValue={setSearchValue} />}
+        </div>
     </section>
   )
 }
 
 const SecondHeader = () => {
-  const [searchValue,setSearchValue]=useState('')
+  const [searchValue,setSearchValue]=useState('');
   const {links,toggleName,NameType}=useGlobalContext();
   const [show,setShow]=useState(false);
   const [showSearch,setShowSearch]=useState(false);
   const toggleSearch=()=>setShowSearch(!showSearch)
-  const toggleShow=()=>setShow(!show)
+  const toggleShow=()=>setShow(!show);
+  const searchValueOutput=(search)=>{
+    const newVal=search.split('#').join('%23').split("/").join('%2F').split("\\").join('%5C');
+    setSearchValue(newVal)
+  }
   return (
     <header className="select-none z-40 3xl:relative xl:fixed relative bg-gradient-to-b from-orange-950 via-orange-950 to-transparent w-full left-0 sm:p-0 py-2">
     <section className="
@@ -108,7 +112,7 @@ const SecondHeader = () => {
           <span className="text-orange-500">Sphere</span>
         </Link>
       </div>
-      <Search searchValue={searchValue}setSearchValue={setSearchValue} />
+      <Search searchValue={searchValue} setSearchValue={setSearchValue} searchValueOutput={searchValueOutput} />
       <div className="lg:block hidden">
         <Socials />
       </div>
@@ -125,8 +129,9 @@ const SecondHeader = () => {
     transition-all delay-100
     ${!show &&'-translate-x-full'}
     `}>
-      <button className={`text-orange-100 block m-3`} onClick={toggleShow}>
-                    <IoMdClose className='text-5xl inline-block transition-all' style={{rotate:show?"180deg":'0deg'}}/> 
+      <button className={`text-orange-100 m-2 my-6 px-3 py-2 text-lg  rounded-full flex items-center gap-1.5 border-4 border-transparent bg-slate-950 bg-opacity-70 active:border-orange-100 active:border-opacity-50`} onClick={toggleShow}>
+                    <FaAngleLeft className='inline-flex transition-all text-base'/>
+                    Close menu
       </button>
       <ul className="flex  flex-col  py-5 xs:max-w-96 w-screen text-orange-100 gap-4  font-semibold  text-2xl">
         <li className="px-10 py-5 flex justify-center bg-black bg-opacity-50 sm:hidden">
@@ -157,7 +162,7 @@ const SecondHeader = () => {
     <SignInAndSearch toggleSearch={toggleSearch}/> 
   </section>
 
-  <SearchBar showSearch={showSearch} searchValue={searchValue}setSearchValue={setSearchValue}/>
+  <SearchBar showSearch={showSearch} searchValue={searchValue} setSearchValue={setSearchValue} searchValueOutput={searchValueOutput}/>
   
   </header>
   )

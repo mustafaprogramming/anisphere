@@ -8,12 +8,6 @@ import { useGlobalContext } from '../GlobalContext';
 export default function Header() {
     const {links}=useGlobalContext();
     const [show,setShow]=useState(false);
-    const [size,setSize]=useState(0);
-    const refContainer=useRef(null);
-    useEffect(()=>{
-        const height=refContainer.current.getBoundingClientRect().height;
-        setSize(height);
-    },[show])
     return (
         <header className='flex justify-start md:justify-center w-full h-16 absolute z-50 select-none'>
             {/* logo */}
@@ -24,33 +18,29 @@ export default function Header() {
             </div>
             {/* links */}
             <nav className={`
-                    mt-36
+                    mt-14
                     md:mt-5
                     overflow-hidden 
                     transition-all
                     duration-300
                     absolute
                     left-2/4
-                    w-fit
-                    h-0
+                    w-full
+                    ${show?'h-fit':'h-0'}
                     md:h-fit
+                    px-5
                     -translate-x-2/4`}
-                    style={{height:show?size:''}}
                     >
                 <ul 
-                ref={refContainer}
 
                 className={`
                     text-lg font-semibold text-orange-200
                     flex flex-col gap-6
                     items-center
                     justify-center
-                    bg-black
+                    bg-slate-950 bg-opacity-90 
                     w-full
-                    py-5
-                    px-20
-                    sm:px-52
-                    opacity-95
+                    py-10
                     rounded-2xl
                     md:px-5
                     md:py-4

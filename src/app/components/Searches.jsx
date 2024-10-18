@@ -1,14 +1,15 @@
+'use client';
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaAngleRight } from "react-icons/fa";
 import { useGlobalContext } from '../GlobalContext'
 import { useEffect, useState } from 'react'
-
-const Searches = ({ searchValue }) => {
+const Searches = ({ searchValue ,setSearchValue}) => {
   const { topAll } = useGlobalContext()
   const [viewMore,setViewMore]=useState(false);
-  const [results,setResults]=useState([]);
+  const [results,setResults]=useState(null);
   useEffect(()=>{
+    setResults(null);
     const searchValArray=searchValue.toLowerCase().split('')
     let array = topAll.filter((anime)=>{
      const answer=[];
@@ -27,8 +28,20 @@ const Searches = ({ searchValue }) => {
     }else{
       setViewMore(false)
     }
-    setResults(array.splice(0,5))
+    const id=setTimeout(()=>{
+      setResults(array.splice(0,5));
+    },500)
+    return ()=>clearTimeout(id)
   },[searchValue,topAll])
+  if (!results) {
+    return  <aside className='h-fit w-full bg-orange-900'>
+              <div className="scale-75 w-full max-w-96 mx-auto min-h-20 flex relative">
+                <div className="spinner bg-orange-500" style={{'--order':'35%','--time':'0s'}}></div>
+                <div className="spinner bg-orange-500" style={{'--order':'50%','--time':'0.4s'}}></div>
+                <div className="spinner bg-orange-500" style={{'--order':'65%','--time':'0.8s'}}></div>
+              </div>
+            </aside>
+  }
   if(results.length<1){
     return <aside className='bg-orange-900 p-5 xl:text-center font-semibold w-full text-orange-200'>
       No Results Found!
@@ -45,12 +58,12 @@ const Searches = ({ searchValue }) => {
                 src={image}
                 alt={title}
                 width={48}
-                height={56}
+                height={64}
                 quality={100}
-                className='min-w-12 max-w-12 max-h-16 min-h-16 rounded-md'
+                className='min-w-12 w-12 max-w-12 max-h-16 h-16 min-h-16 rounded-md'
               />
               <div className='ms-5'>
-                  <Link href={`/search/${id}`}>
+                  <Link href={`/search/${id}`} onClick={()=>setSearchValue('')}>
                       <h3 className='font-semibold xl:text-sm hover:text-orange-300 line-clamp-1'>
                         {title || 'N/A'}
                       </h3>
@@ -71,7 +84,7 @@ const Searches = ({ searchValue }) => {
           </article>
         )
       })}
-      {viewMore&&<Link href={`/result/${searchValue}`} className='bg-orange-300 p-4 mt-2 text-orange-100 font-semibold text-lg text-center transition-all duration-300 ease-in hover:text-orange-500'>View all results<FaAngleRight className='inline-flex'/></Link>}
+      {viewMore&&<Link href={`/result/?keyword=${searchValue}`} onClick={()=>setSearchValue('')} className='bg-orange-300 p-4 mt-2 text-orange-100 font-semibold text-lg text-center transition-all duration-300 ease-in hover:text-orange-500'>View all results<FaAngleRight className='inline-flex'/></Link>}
     </aside>
   )
 }

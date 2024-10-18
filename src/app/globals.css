@@ -122,3 +122,11 @@ input[type='text']:active,input[type='text']:hover {
         height: 45px;
     }
 }
+.loaderContainer{
+    width: 100vw;
+}
+@media (min-width: 1200px) {
+    .loaderContainer{
+        width: 75vw;
+    }
+}

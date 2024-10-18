@@ -20,7 +20,7 @@ const Carousel = ({array}) => {
   }
   const id=setInterval(()=>{
    setIndex((prev)=>prev+1);
-  },5000);
+  },2500);
   return ()=>{
    clearInterval(id)
   }
@@ -42,7 +42,7 @@ const Carousel = ({array}) => {
     return <></>
   }
   return (
-   <main className="w-full xl:h-4/6 md:h-3/6 h-2/5 xl:mt-24 xl:mb-10 md:my-10 mb-10 relative overflow-x-hidden " style={{maxHeight:'450px'}}>
+   <main className="w-full xl:h-4/6 md:h-3/6 h-2/5 xl:mt-24 xl:mb-0 md:my-10 mt-5 mb-10 relative overflow-x-hidden " style={{maxHeight:'450px'}}>
     <div className="md:flex hidden font-semibold lg:text-5xl md:text-3xl text-2xl absolute justify-between items-center w-full h-full px-6" style={{zIndex:'5'}}>
      <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-orange-400 active:opacity-20 active:border active:border-orange-600  text-white active:text-orange-500" onClick={(event)=>sliderMove(event,'dec')}><FaAngleLeft /></button>
      <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-orange-400 active:opacity-20 active:border active:border-orange-600  text-white active:text-orange-500" onClick={(event)=>sliderMove(event)}><FaAngleRight /></button>
@@ -51,15 +51,15 @@ const Carousel = ({array}) => {
      {array.map((item,ind)=>{
       let style=''
       if(ind===Index){
-       style='bg-orange-400 border-2 border-orange-500 sm:w-4 sm:h-4 w-3 h-3'
+       style='bg-orange-400 sm:w-3.5 sm:h-3.5 w-3 h-3'
       }else if(ind===Index+1 || ind===Index-1){
-       style='bg-orange-300 border-2 border-orange-400 bg-opacity-50 sm:w-3 sm:h-3 w-2.5 h-2.5'
+       style='bg-orange-300 bg-opacity-80 sm:w-3 sm:h-3 w-2.5 h-2.5'
       }else{
-       style='bg-orange-100 sm:w-2.5 sm:h-2.5 w-2 h-2'
+       style='bg-orange-200 bg-opacity-60 sm:w-2.5 sm:h-2.5 w-2 h-2'
       }
 
       return (
-       <button onClick={()=>setIndex(ind)} key={ind} className={`bg-orange-100 rounded-full ${style}`}></button>
+       <button onClick={()=>setIndex(ind)} key={ind} className={`rounded-full ${style}`}></button>
       )
      })}
     </div>

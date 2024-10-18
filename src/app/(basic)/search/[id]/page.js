@@ -10,24 +10,32 @@ import {
 import Loading from '../../loading';
 import { useGlobalContext } from '@/app/GlobalContext'
 import ListsCards from '@/app/components/ListsCards'
+import Banner from '@/app/components/Banner'
 import Image from 'next/image'
 
 const SingleAnimePage = ({ params }) => {
   const id = params.id
   const [Anime, setAnime] = useState(null)
   const [text, setText] = useState(false)
+  const [loading, setLoading] = useState(true)
   const { all, top, NameType } = useGlobalContext()
   useEffect(() => {
+    setLoading(true);
     const Anime = all.find((anime) => anime.id === id)
     if (!Anime) {
-      throw new Error('Not Found')
+      setLoading(false)
+      setAnime(null)
     } else {
+      setLoading(false)
       setAnime(Anime)
     }
   }, [id,all])
 
-  if (!Anime) {
+  if (loading) {
     return <Loading />
+  }
+  if (!Anime) {
+    return <Banner title='No Result' subtitle={`no results found`}/>
   }
   const {
     image,
