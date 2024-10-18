@@ -9,7 +9,7 @@ const Info = () => {
   return (
     <section className="relative 
     w-full
-    xs:h-screen h-5/6
+    infoHeight
     flex sm:items-center
     pt-24
     xs:pt-28 xs:px-11">

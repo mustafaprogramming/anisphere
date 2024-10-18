@@ -75,6 +75,9 @@ input[type='text']:active,input[type='text']:hover {
 .carousel{
     transition: all ease-in 0.1s ;
 }
+.infoHeight{
+    height: 80vh;
+}
 @media (min-width: 768px) {
     .carousel-shade-r{
         background: linear-gradient(to right,#0f172a,transparent,#0f172a);
@@ -98,6 +101,12 @@ input[type='text']:active,input[type='text']:hover {
 @media (max-width: 480px) {
     ::-webkit-scrollbar {
         display: none;
+    }
+    
+}
+@media (min-width: 480px) {
+    .infoHeight{
+        height: 100vh;
     }
 }
 .spinner{

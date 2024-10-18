@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="absolute w-full xs:h-screen h-5/6
+    <section className="absolute w-full infoHeight
     overflow-hidden bg-gradient-to-t from-orange-950 via-transparent to-orange-950 select-none ">
       <div className="absolute w-full h-full flex bg-gradient-to-t from-black via-transparent to-black ">
 
