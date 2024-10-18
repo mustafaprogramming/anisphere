@@ -4,7 +4,7 @@ import Carousel from '../../components/Carousel'
 import { useGlobalContext } from "../../GlobalContext";
 
 const Home = () => {
-  const {all,top,setSearchValue}=useGlobalContext();
+  const {all,top}=useGlobalContext();
   return (
     <>
       <Carousel array={top}/>

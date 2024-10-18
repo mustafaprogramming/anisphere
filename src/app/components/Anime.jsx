@@ -17,7 +17,7 @@ const Anime = ({array,title}) => {
       let startingIndex=endingIndex-divNum;
       let splicedArray=array.slice(startingIndex,endingIndex);
       setResult(splicedArray)
-  },[array,pageIndex]);
+  },[array,pageIndex,divNum]);
   if (!result) {
     return  <section className="loaderContainer">
               <Loading />
