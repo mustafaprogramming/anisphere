@@ -32,10 +32,10 @@ const Info = () => {
           <p className='text-orange-100 font-thin sm:text-base text-sm flex flex-wrap'>
             <b className='font-bold sm:text-base text-sm '>Top search:</b>
             {top.map((anime)=>{
-              return <span  key={anime.id} className="ml-1 flex"><Link href={'/search/'+anime.id} className="break-all max-w-40 text-wrap line-clamp-1  hover:text-orange-300 ">{anime.title}</Link>,</span>
+              return <span  key={anime.id} className="ml-1 flex"><Link href={`/result/?keyword=${anime.title.split('#').join('%23').split("/").join('%2F').split("\\").join('%5C')}`} className="break-all max-w-40 text-wrap line-clamp-1  hover:text-orange-300 ">{anime.title}</Link>,</span>
             })}
           </p>
-          <Link href='/watch-anime' >
+          <Link href={'/watch-anime'} >
               <button type="button" className=" bg-orange-200 hover:bg-gradient-to-r hover:from-orange-300 hover:to-orange-600 rounded-lg p-3 pl-7 font-bold mt-8 mb-3
           ">
               Watch anime

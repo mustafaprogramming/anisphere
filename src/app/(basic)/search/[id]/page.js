@@ -1,12 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import {
-  FaClosedCaptioning,
-  FaMicrophone,
-  FaPlay,
-  FaPlus,
-} from 'react-icons/fa';
+import {FaClosedCaptioning,FaMicrophone,FaPlay,FaPlus,} from 'react-icons/fa';
 import Loading from '../../loading';
 import { useGlobalContext } from '@/app/GlobalContext'
 import ListsCards from '@/app/components/ListsCards'
@@ -67,7 +62,7 @@ const SingleAnimePage = ({ params }) => {
             style={{ backgroundImage: `url(${image})` }}
           ></div>
         </div>
-        <article className='flex sm:flex-row flex-col sm:p-14 p-3 sm:pt-20 pt-5 lg:w-4/5 lg:pr-20 items-start sm:scale-100 scale-75'>
+        <article  className='flex sm:flex-row flex-col sm:p-14 p-3 sm:pt-20 pt-5 lg:w-4/5 lg:pr-20 items-start sm:scale-100 scale-75'>
           <div className='relative min-w-48 max-w-48 h-64 sm:mx-0 mx-auto'>
             {isAdult && (
               <span className='bg-orange-500 absolute rounded-md p-1 text-xs text-white font-bold pr-2.5 left-2 top-2'>
@@ -177,7 +172,7 @@ const SingleAnimePage = ({ params }) => {
           style={{ fontSize: '13px' }}
         >
           <p className=' sm:hidden block  text-orange-100 text-opacity-75 '>
-            <span className='mb-2 block text-sm text-orange-100  font-bold'>
+            <span className='mb-2 block text-sm text-orange-100  font-semibold'>
               Overview:
             </span>
             {text ? description : description.substring(0, 200)}

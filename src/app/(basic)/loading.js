@@ -1,11 +1,15 @@
-
 const loading = () => {
   return (
-    <aside className="bg-orange-700 mx-auto w-full max-w-96 min-h-40 rounded-lg flex relative my-28">
-      <div className="spinner bg-orange-500" style={{'--order':'35%','--time':'0s'}}></div>
-      <div className="spinner bg-orange-500" style={{'--order':'50%','--time':'0.4s'}}></div>
-      <div className="spinner bg-orange-500" style={{'--order':'65%','--time':'0.8s'}}></div>
-    </aside>
+    <section className="loaderContainer">
+      <div className='loading mx-auto w-full  max-w-xl min-h-40 rounded-lg flex relative '>
+        <span
+          className='spinner spinner1 bg-orange-500 xs:w-16 xxs:w-12 w-10 xs:h-16 xxs:h-12 h-10'></span>
+        <span
+          className='spinner spinner2 bg-orange-500 xs:w-16 xxs:w-12 w-10 xs:h-16 xxs:h-12 h-10'></span>
+        <span
+          className='spinner spinner3 bg-orange-500 xs:w-16 xxs:w-12 w-10 xs:h-16 xxs:h-12 h-10'></span>
+      </div>
+    </section>
   )
 }
 

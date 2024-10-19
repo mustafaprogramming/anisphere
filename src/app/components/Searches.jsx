@@ -34,11 +34,12 @@ const Searches = ({ searchValue ,setSearchValue}) => {
     return ()=>clearTimeout(id)
   },[searchValue,topAll])
   if (!results) {
-    return  <aside className='h-fit w-full bg-orange-900'>
-              <div className="scale-75 w-full max-w-96 mx-auto min-h-20 flex relative">
-                <div className="spinner bg-orange-500" style={{'--order':'35%','--time':'0s'}}></div>
-                <div className="spinner bg-orange-500" style={{'--order':'50%','--time':'0.4s'}}></div>
-                <div className="spinner bg-orange-500" style={{'--order':'65%','--time':'0.8s'}}></div>
+    
+    return  <aside className='bg-orange-900 w-full h-fit'>
+              <div className="loading w-full max-w-80 mx-auto min-h-20 flex relative">
+                <span className="spinner spinner1 bg-orange-500" style={{'--size':'30px'}}></span>
+                <span className="spinner spinner2 bg-orange-500" style={{'--size':'30px'}}></span>
+                <span className="spinner spinner3 bg-orange-500" style={{'--size':'30px'}}></span>
               </div>
             </aside>
   }
@@ -68,7 +69,7 @@ const Searches = ({ searchValue ,setSearchValue}) => {
                         {title || 'N/A'}
                       </h3>
                   </Link>
-                  <h2 className='font-semibold mb-3 xl:text-xs opacity-50 text-sm line-clamp-1'>
+                  <h2 className=' mb-3 xl:text-xs opacity-50 text-sm line-clamp-1'>
                     {JpName || 'N/A'}
                   </h2>
                   <p className='font-bold opacity-80 text-xs flex gap-1 items-center'>

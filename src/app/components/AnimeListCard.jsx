@@ -12,11 +12,11 @@ const AnimeListCard = ({anime,children}) => {
    <li className="flex items-center -mt-5 top-10-li">
    {children}
    <article className="m-5 flex-1">
-     <section className="flex items-center">
-       <Image src={image} alt={title} width={64} height={80} quality={100} className="min-w-16 max-w-16 max-h-20 min-h-20 rounded-md" />
+     <section className="flex items-center" >
+       <Image src={image} alt={title} width={60} height={76} quality={100} className="rounded-md" style={{height:'76px'}} />
        <div className="ms-5">
          <Link href={`/search/${id}`}>
-         <h3 className="font-semibold mb-3 xl:text-sm hover:text-orange-300 line-clamp-2">{NameType?title:JpName|| 'N/A'}</h3>
+         <h3 className="font-semibold mb-3 text-sm hover:text-orange-300 line-clamp-2">{NameType?title:JpName|| 'N/A'}</h3>
          </Link>
          {EpCount>0 && 
           <div className="flex font-bold text-black text-xs gap-0.5 scale-90 ">

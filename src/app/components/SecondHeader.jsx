@@ -44,13 +44,13 @@ const Search=({searchValue,setSearchValue,searchValueOutput})=>{
   let inputVal=searchValue.split('%23').join('#').split("%2F").join('/').split("%5C").join('\\');
   return(
     <section className="w-96 hidden 1xl:flex relative flex-col">
-        <div className="items-center w-full relative flex">
-          <input type="text" value={inputVal} onChange={(event)=>searchValueOutput(event.target.value)} className="py-2 px-4  flex-1 bg-white font-semibold text-orange-900" placeholder="Search anime..." /> 
+        <div className="items-center w-full relative flex bg-white">
+          <input type="text" value={inputVal} onChange={(event)=>searchValueOutput(event.target.value)} className="py-2 ps-4 pe-24  flex-1 font-semibold text-orange-900 " placeholder="Search anime..." /> 
           <div className="absolute right-1 flex items-center gap-2">
           <Link href={`/result/?keyword=${searchValue}`} onClick={()=>setSearchValue('')}>
             <IoSearchSharp  className="text-2xl text-orange-600 hover:text-orange-400 active:text-orange-950"/> 
           </Link>
-          <Link href={`/filter`} className="bg-orange-500  font-semibold text-orange-100 my-2 px-1 py-0.5 text-sm rounded-md">
+          <Link href={`/filter`} className="bg-orange-500 text-orange-100 my-2 px-2 py-0.5 text-sm rounded-md">
           filter
           </Link>
           </div>
@@ -67,14 +67,14 @@ const SearchBar=({showSearch,searchValue,setSearchValue,searchValueOutput})=>{
   let inputVal=searchValue.split('%23').join('#').split("%2F").join('/').split("%5C").join('\\');
   return(
     <section className="w-full 1xl:hidden bg-orange-950 flex flex-col">
-      <aside className={`w-full h-14 flex items-center px-5 py-2 gap-4 ${!showSearch&&'hidden'}`}>
-        <Link href='/filter' className="bg-orange-500 hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-800 px-3 py-2 rounded-lg  font-semibold text-orange-100">
+      <aside className={`w-full h-14 flex items-center xs:px-5 px-2 py-2 xs:gap-4 gap-2 ${!showSearch&&'hidden'}`}>
+        <Link href='/filter' className="bg-orange-500 hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-800 px-3 xs:py-2 py-1 rounded-lg  font-semibold text-orange-100 xxs:block hidden">
         <FaFilter  className='text-1xl inline-block'/> 
         </Link>
-        <div className="flex items-center w-full">
-        <input type="text" value={inputVal} onChange={(event)=>searchValueOutput(event.target.value)} className="py-2 px-4  flex-1 bg-white rounded-lg font-semibold text-orange-900" placeholder="Search anime..."/> 
-        <Link href={`/result/?keyword=${searchValue}`} onClick={()=>setSearchValue('')} className="absolute right-2 bg-white rounded-lg -translate-x-2/4 ">
-          <IoSearchSharp  className="text-4xl text-orange-600 hover:text-orange-400 active:text-orange-950"/> 
+        <div className="flex items-center w-full relative">
+        <input type="text" value={inputVal} onChange={(event)=>searchValueOutput(event.target.value)} className="xs:py-2 py-1 ps-4 pe-12 flex-1 bg-white rounded-lg font-semibold text-orange-900" placeholder="Search anime..."/> 
+        <Link href={`/result/?keyword=${searchValue}`} onClick={()=>setSearchValue('')} className="absolute right-2">
+          <IoSearchSharp  className="xs:text-4xl text-3xl text-orange-600 hover:text-orange-400 active:text-orange-950"/> 
         </Link>
         </div>
       </aside>

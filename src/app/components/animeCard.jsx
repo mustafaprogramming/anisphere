@@ -27,7 +27,7 @@ const AnimeCard = ({anime}) => {
     <article key={id} className="relative flex flex-col" >
           <div className="relative flex-1" onMouseOver={ShowLink}
             onMouseOut={hideLink}>   
-            <Image src={image} alt={title} width={300} height={400} quality={100} ref={card}className="h-full"/>
+            <Image src={image} alt={title} width={300} height={400} quality={100} ref={card}className="h-full p-0.5"/>
             <div className="h-full w-full top-0 absolute bg-gradient-to-t from-orange-950 md:hover:from-transparent via-transparent to-transparent">
             {showLink && <Link href={link} className="absolute w-full h-full backdrop-blur-md md:opacity-100 opacity-0">
               <FaPlay className="text-white text-3xl left-2/4
@@ -43,8 +43,8 @@ const AnimeCard = ({anime}) => {
               }
             </div>
           </div> 
-          <Link href={'/search/'+id}>
-          <h5 className="text-orange-100 hover:text-orange-300 font-semibold line-clamp-1">{NameType?title:JpName|| 'N/A'}</h5>
+          <Link href={`/search/${id}`}>
+          <h5 className="ml-0.5 mt-2 text-orange-100 text-sm hover:text-orange-300 font-semibold line-clamp-1">{NameType?title:JpName|| 'N/A'}</h5>
           </Link>
           <p className="text-white opacity-60 mt-1 flex gap-1 items-center">
           {!movie?'TV':'Movie'}
