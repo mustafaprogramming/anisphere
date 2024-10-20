@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useGlobalContext } from "../GlobalContext";
 import AnimeListCard from "./AnimeListCard";
 import Loading from '../(basic)/loading';
-import { FaAngleRight  } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 import Link from "next/link";
 
 const ListBundle = () => {
@@ -31,7 +31,7 @@ const ListBundle = () => {
     return <></>
   }
   return (
-    <section className="mt-16 px-2 grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-x-3 text-orange-100">
+    <section className="md:mt-16 mt-8 px-2 grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-x-3 text-orange-100">
      <aside className="p-3 w-full flex flex-col">
       <h1 className="xs:text-xl text-lg font-semibold text-orange-500 mb-8">Most Popular</h1>
       <ul>
