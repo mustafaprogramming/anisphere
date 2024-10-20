@@ -21,7 +21,7 @@ const ListBundle = () => {
       let topRated=all.filter(item=>item.rating>8).sort((a,b)=>b.rating-a.rating).slice(0,5);
       setTopRated(topRated)
       setIsPending(false)
-  },[])
+  },[all,top])
   if(isPending){
     return <Loading />
   }
