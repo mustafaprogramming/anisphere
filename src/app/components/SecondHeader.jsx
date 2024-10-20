@@ -122,18 +122,18 @@ const SecondHeader = () => {
       </div>
     </div>
 
-    {show&&<div className="w-full h-screen fixed top-0 left-0 bg-black opacity-50 z-50 lg:hidden"></div>}
+    {show&&<div className="w-full h-screen fixed top-0 left-0 bg-black opacity-50 z-50"></div>}
 
     <nav className={`z-50 fixed left-0 top-0
     h-screen items-center bg-slate-900 bg-opacity-90
     transition-all delay-100
     ${!show &&'-translate-x-full'}
     `}>
-      <button className={`text-orange-100 m-2 my-6 px-3 py-2 text-lg  rounded-full flex items-center gap-1.5 border-4 border-transparent bg-slate-950 bg-opacity-70 active:border-orange-100 active:border-opacity-50`} onClick={toggleShow}>
+      <button className={`text-orange-100 m-2 my-6 px-3 py-1  rounded-full flex items-center gap-1.5 border-4 border-transparent bg-slate-950 bg-opacity-70 active:border-orange-100 active:border-opacity-50`} onClick={toggleShow}>
                     <FaAngleLeft className='inline-flex transition-all text-base'/>
                     Close menu
       </button>
-      <ul className="flex  flex-col  py-5 xs:max-w-96 w-screen text-orange-100 gap-4  font-semibold  text-2xl">
+      <ul className="flex  flex-col  py-5 xl:max-w-64 sm:max-w-72 xs:max-w-96 w-screen text-orange-100 gap-4  font-semibold ">
         <li className="px-10 py-5 flex justify-center bg-black bg-opacity-50 sm:hidden">
           <AnimeName NameType={NameType} toggleName={toggleName}/>
         </li>

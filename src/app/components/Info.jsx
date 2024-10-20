@@ -13,7 +13,7 @@ const Info = () => {
     flex sm:items-center
     pt-24
     xs:pt-28 xs:px-11">
-      <aside className='
+      <aside className='scale-90
       xs:rounded-lg xs:py-5 xs:px-10 w-full sm:max-w-lg h-fit' style={{background:' linear-gradient(to right ,#c2400cd3 ,#431407d3)'}}>
         <div className="sm:scale-100 xs:scale-90 scale-75">
           <h2 className='sm:text-5xl text-3xl font-bold text-orange-100 pt-2 mb-8'>Ani<span className='text-orange-500'>Sphere</span></h2>

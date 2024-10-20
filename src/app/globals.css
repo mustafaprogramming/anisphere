@@ -10,11 +10,11 @@
 }
 ::-webkit-scrollbar-thumb {
     background: #AC390B;
-    border: 3px solid #461406;
+    border: 3px solid #340d02;
     border-radius: 5px;
 }
 ::-webkit-scrollbar-track {
-    background: #461406;
+    background: #340d02;
 }
 
 input[type='text']{

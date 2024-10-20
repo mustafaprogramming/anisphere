@@ -18,12 +18,12 @@ const Carousel = ({array}) => {
   if(Index<0){
    setIndex(array.length-1)
   }
-  const id=setInterval(()=>{
-   setIndex((prev)=>prev+1);
-  },2500);
-  return ()=>{
-   clearInterval(id)
-  }
+  // const id=setInterval(()=>{
+  //  setIndex((prev)=>prev+1);
+  // },2500);
+  // return ()=>{
+  //  clearInterval(id)
+  // }
  },[Index,array.length])
 
  const sliderMove=(event,type)=>{
@@ -104,14 +104,14 @@ const Carousel = ({array}) => {
              </Link>
           </div>
           </aside>
-          <div className="right-0 sm:w-2/4 w-full h-full absolute">
+          <div className="right-0 sm:w-2/5 w-full h-full absolute">
             <div className="absolute w-full h-full carousel-shade-t" style={{zIndex:'1'}}>
             </div>
             <div className="absolute w-full h-full carousel-shade-r" style={{zIndex:'2'}}>
             </div>
-            <Image src={image} alt={title} width={600} height={600} quality={100} 
+            <Image src={image} alt={title} width={200} height={450} quality={100} 
             priority
-            className="w-full h-full absolute z-0 px-1"/>
+            className="w-full h-full absolute z-0 px-1 contrast-125"/>
           </div>    
      </section>
      )
