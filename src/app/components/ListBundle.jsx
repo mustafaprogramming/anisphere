@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useGlobalContext } from "../GlobalContext";
 import AnimeListCard from "./AnimeListCard";
 import Loading from '../(basic)/loading';
-import { FaAngleRight ,FaAngleLeft } from "react-icons/fa";
+import { FaAngleRight  } from "react-icons/fa";
 import Link from "next/link";
 
 const ListBundle = () => {
