@@ -29,10 +29,10 @@ const AnimeCard = ({anime}) => {
             onMouseOut={hideLink}>   
             <Image src={image} alt={title} width={300} height={400} quality={100} ref={card}className="h-full p-0.5"/>
             <div className="h-full w-full top-0 absolute bg-gradient-to-t from-orange-950 md:hover:from-transparent via-transparent to-transparent">
-            {showLink && <Link href={link} className="absolute w-full h-full backdrop-blur-md md:opacity-100 opacity-0">
+            {showLink && <a href={link} className="absolute w-full h-full backdrop-blur-md md:opacity-100 opacity-0">
               <FaPlay className="text-white text-3xl left-2/4
               top-2/4 -translate-x-2/4 -translate-y-2/4 absolute"/>
-            </Link>}
+            </a>}
               {isAdult && <span className="bg-orange-500 absolute rounded-md p-1 text-xs text-white font-bold pr-2.5 xl:left-2 left-3 top-2">18+</span>}
               {EpCount>0 && 
               <div className="absolute flex left-2 bottom-2.5 font-bold text-xs gap-0.5 xl:scale-100 scale-90 ">

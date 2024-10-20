@@ -6,7 +6,7 @@ const ListsCards = ({array,topArray,title}) => {
   return (
     <>
       <div id={title} className='h-5'></div>
-      <section className="xl:mt-10 flex xl:flex-row flex-col my-4 gap-2" >
+      <section className="xl:mt-16 flex xl:flex-row flex-col my-4 gap-2" >
         <main>
           <Anime array={array} title={title}/> 
         </main>

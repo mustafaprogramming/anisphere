@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useGlobalContext } from "../GlobalContext";
 import AnimeListCard from "./AnimeListCard";
 import Loading from '../(basic)/loading';
+import { FaAngleRight ,FaAngleLeft } from "react-icons/fa";
+import Link from "next/link";
 
 const ListBundle = () => {
   let {all,top}=useGlobalContext();
@@ -29,38 +31,42 @@ const ListBundle = () => {
     return <></>
   }
   return (
-    <section className="mt-10 px-2 grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-x-3">
-     <aside className="p-3 w-full flex flex-col text-orange-100">
-      <h1 className="xs:text-2xl xxs:text-xl text-lg font-semibold text-orange-500 mb-8">Most Popular</h1>
+    <section className="mt-16 px-2 grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-x-3 text-orange-100">
+     <aside className="p-3 w-full flex flex-col">
+      <h1 className="xs:text-xl text-lg font-semibold text-orange-500 mb-8">Most Popular</h1>
       <ul>
-        {MostPopular.map((anime,index)=>{
-          return  <AnimeListCard key={anime.id} anime={anime} lastIndex={index+1===MostPopular.length?true:false}/>
+        {MostPopular.map((anime)=>{
+          return  <AnimeListCard key={anime.id} anime={anime} />
         })}
       </ul>
+      <Link href={'./most-popular'} className="flex gap-2 items-center  hover:text-orange-500">View more<FaAngleRight /></Link>
      </aside>
-     <aside className="p-3 w-full flex flex-col text-orange-100">
-      <h1 className="xs:text-2xl xxs:text-xl text-lg font-semibold text-orange-500 mb-8">Top Rated</h1>
+     <aside className="p-3 w-full flex flex-col">
+      <h1 className="xs:text-xl text-lg font-semibold text-orange-500 mb-8">Top Rated</h1>
       <ul>
-        {topRated.map((anime,index)=>{
-          return  <AnimeListCard key={anime.id} anime={anime} lastIndex={index+1===topRated.length?true:false}/>
+        {topRated.map((anime)=>{
+          return  <AnimeListCard key={anime.id} anime={anime} />
         })}
       </ul>
+      <Link href={'./top-rated'} className="flex gap-2 items-center  hover:text-orange-500">View more<FaAngleRight /></Link>
      </aside>
-     <aside className="p-3 w-full flex flex-col text-orange-100">
-      <h1 className="xs:text-2xl xxs:text-xl text-lg font-semibold text-orange-500 mb-8">18 +</h1>
+     <aside className="p-3 w-full flex flex-col">
+      <h1 className="xs:text-xl text-lg font-semibold text-orange-500 mb-8">Adult</h1>
       <ul>
-        {adult.map((anime,index)=>{
-          return  <AnimeListCard key={anime.id} anime={anime} lastIndex={index+1===adult.length?true:false}/>
+        {adult.map((anime)=>{
+          return  <AnimeListCard key={anime.id} anime={anime} />
         })}
       </ul>
+      <Link href={'./adult-rated'} className="flex gap-2 items-center  hover:text-orange-500">View more<FaAngleRight /></Link>
      </aside>
-     <aside className="p-3 w-full flex flex-col text-orange-100">
-      <h1 className="xs:text-2xl xxs:text-xl text-lg font-semibold text-orange-500 mb-8">Quick Watch</h1>
+     <aside className="p-3 w-full flex flex-col">
+      <h1 className="xs:text-xl text-lg font-semibold text-orange-500 mb-8">Quick Watch</h1>
       <ul>
-        {quickWatch.map((anime,index)=>{
-          return  <AnimeListCard key={anime.id} anime={anime} lastIndex={index+1===quickWatch.length?true:false}/>
+        {quickWatch.map((anime)=>{
+          return  <AnimeListCard key={anime.id} anime={anime} />
         })}
       </ul>
+      <Link href={'./quick-watch'} className="flex gap-2 items-center  hover:text-orange-500">View more<FaAngleRight /></Link>
      </aside>
     </section>
   )

@@ -34,7 +34,7 @@ const Anime = ({array,title}) => {
       </main>
       <div className="mx-10 my-10 flex justify-between text-orange-400 xs:text-lg text-base ">
       <a href={`#${title}`} className={`flex items-center gap-1 border-2 border-opacity-70 border-orange-400 xs:pe-5 xs:px-3 xs:py-1.5 px-2 py-1 rounded-full ${pageIndex<=1&&'invisible'} xxs:scale-100 scale-75`} disabled={pageIndex<=1?true:false} onClick={()=>setPageIndex(pageIndex-1)}><FaAngleLeft /><span className="xs:block hidden">Previous</span></a>
-      <span className="px-4 py-2 font-semibold text-orange-100 bg-orange-400 bg-opacity-80 rounded-full text-center xxs:scale-100 scale-75">{pageIndex} / {pages}</span>
+      <span className="px-4 py-2 font-semibold text-orange-100 bg-orange-400  rounded-full text-center xxs:scale-100 scale-75">{pageIndex} / {pages}</span>
       <a href={`#${title}`} className={`flex items-center gap-1 border-2 border-opacity-70 border-orange-400 xs:ps-5 xs:px-3 xs:py-1.5 px-2 py-1 rounded-full ${pageIndex>=pages&&'invisible'} xxs:scale-100 scale-75`} disabled={pageIndex>=pages?true:false} onClick={()=>setPageIndex(pageIndex+1)}><span className="xs:block hidden">&nbsp;&nbsp;Next&nbsp;&nbsp;</span><FaAngleRight /></a>
       </div>
     </section>

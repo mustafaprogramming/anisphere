@@ -18,12 +18,12 @@ const Carousel = ({array}) => {
   if(Index<0){
    setIndex(array.length-1)
   }
-  // const id=setInterval(()=>{
-  //  setIndex((prev)=>prev+1);
-  // },2500);
-  // return ()=>{
-  //  clearInterval(id)
-  // }
+  const id=setInterval(()=>{
+   setIndex((prev)=>prev+1);
+  },2500);
+  return ()=>{
+   clearInterval(id)
+  }
  },[Index,array.length])
 
  const sliderMove=(event,type)=>{
@@ -42,7 +42,7 @@ const Carousel = ({array}) => {
     return <></>
   }
   return (
-   <main className="w-full xl:h-4/6 md:h-3/6 h-2/5 xl:mt-24 xl:mb-0 md:my-10 mt-5 mb-10 relative overflow-x-hidden " style={{maxHeight:'450px'}}>
+   <main className="w-full xl:h-4/6 h-3/6 xl:mt-24 xl:mb-0 md:my-10 mt-5  relative overflow-x-hidden " style={{maxHeight:'450px'}}>
     <div className="md:flex hidden font-semibold lg:text-5xl md:text-3xl text-2xl absolute justify-between items-center w-full h-full px-6" style={{zIndex:'5'}}>
      <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-orange-400 active:opacity-20 active:border active:border-orange-600  text-white active:text-orange-500" onClick={(event)=>sliderMove(event,'dec')}><FaAngleLeft /></button>
      <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-orange-400 active:opacity-20 active:border active:border-orange-600  text-white active:text-orange-500" onClick={(event)=>sliderMove(event)}><FaAngleRight /></button>
@@ -75,9 +75,9 @@ const Carousel = ({array}) => {
      }
      return (
      <section key={id} className={`md:w-3/4 w-full md: md:bg-slate-900 bg-orange-950 md:border border-white  mx-auto  absolute -translate-x-2/4 ${style} ${index!=Index&&'border-opacity-50 md:scale-75'} carousel h-full`} >
-          <aside className="absolute bottom-0 p-8 xs:w-2/4 w-full flex flex-col xl:gap-4 md:gap-3 gap-2 h-fit" style={{zIndex:'4'}}>
+          <aside className="absolute scale-90 bottom-0 p-8 xs:w-2/4 w-full flex flex-col xl:gap-4 md:gap-3 gap-2 h-fit" style={{zIndex:'4'}}>
             <h3 className="text-orange-500 font-semibold xl:text-lg text-base">#{index+1<10?'0'+(index+1):index+1} Spotlight</h3>
-            <h1 className="font-bold md:my-2 text-orange-100 xl:text-4xl md:text-2xl sm:text-xl text-lg sm:w-96 w-64 lg:line-clamp-2 md:line-clamp-1">{NameType?title:JpName}</h1>
+            <h1 className="font-bold md:my-2 text-orange-100 xl:text-4xl md:text-2xl sm:text-xl text-lg sm:w-96 w-64 sm:line-clamp-1 xl:line-clamp-2">{NameType?title:JpName}</h1>
             <div className="sm:flex gap-2 text-white xl:text-base lg:text-sm text-xs hidden xl:flex-row flex-col">
              <div className="flex gap-2 xl:my-0 ">
              <p className="flex gap-0.5 items-center"><FaCirclePlay/>TV</p>
@@ -104,14 +104,14 @@ const Carousel = ({array}) => {
              </Link>
           </div>
           </aside>
-          <div className="right-0 sm:w-2/5 w-full h-full absolute">
-            <div className="absolute w-full h-full carousel-shade-t" style={{zIndex:'1'}}>
+          <div className="sm:right-0.5 sm:top-0.5 lg:w-2/6 md:w-2/5 sm:w-2/4 w-full  absolute" style={{height:'99%'}}>
+            <div className="absolute p-2 w-full h-full carousel-shade-t" style={{zIndex:'1'}}>
             </div>
-            <div className="absolute w-full h-full carousel-shade-r" style={{zIndex:'2'}}>
+            <div className="absolute p-2 w-full h-full carousel-shade-r" style={{zIndex:'2'}}>
             </div>
-            <Image src={image} alt={title} width={200} height={450} quality={100} 
+            <Image src={image} alt={title} width={400} height={450} quality={100} 
             priority
-            className="w-full h-full absolute z-0 px-1 contrast-125"/>
+            className="w-full h-full p-2 absolute z-0 px-1 contrast-125"/>
           </div>    
      </section>
      )

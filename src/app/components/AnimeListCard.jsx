@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useGlobalContext } from "../GlobalContext";
 
 
-const AnimeListCard = ({anime,lastIndex,children}) => {
+const AnimeListCard = ({anime,lastIndex=false,children}) => {
   const {NameType}=useGlobalContext();
   const{id,image,title,sub,dub,subEpCount,dubEpCount,EpCount,JpName,movie}=anime;
   return (
@@ -13,7 +13,7 @@ const AnimeListCard = ({anime,lastIndex,children}) => {
    {children}
    <article className={`m-5 ${!children&&'mx-0'}  flex-1`}>
      <section className="flex items-center" >
-       <Image src={image} alt={title} width={60} height={76} quality={100} className="rounded-md" style={{height:'76px'}} />
+       <Image src={image} alt={title} width={60} height={76} quality={100} className="rounded-md" style={{minHeight:'76px',minWidth:'60px',maxHeight:'76px',maxWidth:'60px'}} />
        <div className="ms-5">
          <Link href={`/search/${id}`}>
          <h3 className="font-semibold mb-3 text-sm hover:text-orange-300 line-clamp-2">{NameType?title:JpName|| 'N/A'}</h3>
@@ -33,7 +33,7 @@ const AnimeListCard = ({anime,lastIndex,children}) => {
           }
        </div>
      </section>
-     {!lastIndex && <hr className="w-full h-1 opacity-50 mt-4"/>} 
+     {!lastIndex && <hr className="w-full h-1 opacity-20 mt-4"/>} 
    </article>
  </li>
   )

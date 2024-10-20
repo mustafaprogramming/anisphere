@@ -13,7 +13,7 @@ const Top10 = ({array:topTen}) => {
       <ul className="bg-orange-900 bg-opacity-30 ps-5  pt-5 pb-2.5">
         {topTen.map((anime,index)=>{
           const Index=index+1;
-          return  <AnimeListCard key={anime.id} anime={anime} lastIndex={index+1===topTen.length?true:false}>
+          return  <AnimeListCard key={anime.id} anime={anime} lastIndex={index+1===topTen.length}>
                     <h4 className=
                       {`font-bold text-xl text-orange-100 ${Index>3&&'opacity-50'}`}>
                         {Index<10?
