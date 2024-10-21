@@ -44,18 +44,18 @@ const Carousel = ({array}) => {
   return (
    <main className="w-full xl:h-4/6 xs:h-3/6 h-2/5 xl:mt-24 xl:mb-0 md:my-10   relative overflow-x-hidden " style={{maxHeight:'450px'}}>
     <div className="md:flex hidden font-semibold lg:text-5xl md:text-3xl text-2xl absolute justify-between items-center w-full h-full px-6" style={{zIndex:'5'}}>
-     <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-orange-400 active:opacity-20 active:border active:border-orange-600  text-white active:text-orange-500" onClick={(event)=>sliderMove(event,'dec')}><FaAngleLeft /></button>
-     <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-orange-400 active:opacity-20 active:border active:border-orange-600  text-white active:text-orange-500" onClick={(event)=>sliderMove(event)}><FaAngleRight /></button>
+     <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-secondary active:opacity-20 active:border active:border-primary  text-white active:text-primary" onClick={(event)=>sliderMove(event,'dec')}><FaAngleLeft /></button>
+     <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-secondary active:opacity-20 active:border active:border-primary  text-white active:text-primary" onClick={(event)=>sliderMove(event)}><FaAngleRight /></button>
     </div>
     <div className="md:hidden flex flex-col xs:gap-3 gap-2 absolute right-5 bottom-5 items-center" style={{zIndex:'8'}}>
      {array.map((item,ind)=>{
       let style=''
       if(ind===Index){
-       style='bg-orange-400 sm:w-3.5 sm:h-3.5 w-3 h-3'
+       style='bg-secondary sm:w-3.5 sm:h-3.5 w-3 h-3'
       }else if(ind===Index+1 || ind===Index-1){
-       style='bg-orange-300 bg-opacity-80 sm:w-3 sm:h-3 w-2.5 h-2.5'
+       style='bg-accent bg-opacity-80 sm:w-3 sm:h-3 w-2.5 h-2.5'
       }else{
-       style='bg-orange-200 bg-opacity-60 sm:w-2.5 sm:h-2.5 w-2 h-2'
+       style='bg-accent bg-opacity-50 sm:w-2.5 sm:h-2.5 w-2 h-2'
       }
 
       return (
@@ -74,10 +74,10 @@ const Carousel = ({array}) => {
       style='slider-right '
      }
      return (
-     <section key={id} className={`md:w-3/4 w-full md: md:bg-slate-900 bg-orange-950 md:border border-white  md:mx-auto  absolute -translate-x-2/4 ${style} ${index!=Index&&'border-opacity-50 md:scale-75'} carousel h-full`} >
+     <section key={id} className={`md:w-3/4 w-full md:bg-neutral-content bg-base-300 md:border border-white  md:mx-auto  absolute -translate-x-2/4 ${style} ${index!=Index&&'border-opacity-50 md:scale-75'} carousel h-full`} >
           <aside className="absolute scale-90 bottom-0 p-8 xs:w-2/4 w-full flex flex-col xl:gap-4 md:gap-3 gap-2 h-fit" style={{zIndex:'4'}}>
-            <h3 className="text-orange-500 font-semibold text-lg ">#{index+1<10?'0'+(index+1):index+1} Spotlight</h3>
-            <h1 className="font-bold md:my-2 text-orange-100 xl:text-4xl md:text-2xl text-xl  sm:w-96 w-64 sm:line-clamp-1 xl:line-clamp-2">{NameType?title:JpName}</h1>
+            <h3 className="text-primary font-semibold text-lg ">#{index+1<10?'0'+(index+1):index+1} Spotlight</h3>
+            <h1 className="font-bold md:my-2 text-neutral xl:text-4xl md:text-2xl text-xl  sm:w-96 w-64 sm:line-clamp-1 xl:line-clamp-2">{NameType?title:JpName}</h1>
             <div className="sm:flex gap-2 text-white xl:text-base lg:text-sm text-xs hidden xl:flex-row flex-col">
              <div className="flex gap-2 xl:my-0 ">
              <p className="flex gap-0.5 items-center"><FaCirclePlay/>TV</p>
@@ -94,20 +94,20 @@ const Carousel = ({array}) => {
               }
             </div>
             <div className="sm:flex hidden">
-            {description&&<p className="text-orange-100 
+            {description&&<p className="text-neutral 
             line-clamp-3">{description}</p>}
             </div>
           <div className="flex xxs:gap-4 gap-2 mt-5 xxs:flex-row xs:scale-100 flex-col xs:text-base text-sm">
-             <Link href={link} className="bg-orange-300 py-2 px-4  rounded-full flex items-center gap-2 w-fit text-nowrap"><FaPlay className="text-sm"/> Watch now</Link>
+             <Link href={link} className="bg-accent py-2 px-4  rounded-full flex items-center gap-2 w-fit text-black text-nowrap"><FaPlay className="text-sm"/> Watch now</Link>
              <Link href={'/search/'+id} className="bg-slate-400 bg-opacity-50 py-2 px-4 rounded-full flex items-center gap-2 text-nowrap text-white w-fit">
              Detail <FaAngleRight className="text-xl"/>
              </Link>
           </div>
           </aside>
           <div className="sm:right-0.5 sm:top-0.5 lg:w-2/6 md:w-2/5 sm:w-2/4 w-full  absolute" style={{height:'99%'}}>
-            <div className="absolute sm:p-2 py-1 w-full h-full carousel-shade-t" style={{zIndex:'1'}}>
+            <div className="absolute sm:p-2 py-1 w-full h-full bg-gradient-to-t from-base-300 md:from-neutral-content md:via-transparent via-transparent to-base-300 md:to-neutral-content" style={{zIndex:'1'}}>
             </div>
-            <div className="absolute sm:p-2 py-1 w-full h-full carousel-shade-r" style={{zIndex:'2'}}>
+            <div className="absolute sm:p-2 py-1 w-full h-full bg-gradient-to-r from-base-300 md:from-neutral-content md:via-transparent via-transparent to-base-300 md:to-neutral-content" style={{zIndex:'2'}}>
             </div>
             <Image src={image} alt={title} width={400} height={450} quality={100} 
             priority

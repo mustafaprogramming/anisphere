@@ -21,7 +21,7 @@ export default function Header() {
         <header className='flex justify-start md:justify-center w-full h-16 absolute z-50 select-none'>
             {/* logo */}
             <div className='ml-10 flex'>
-                <button id='menuBtn' className={`text-orange-100 md:hidden block m-3 align-baseline ${show&&'text-orange-300'}`} onClick={()=>setShow(!show)}>
+                <button id='menuBtn' className={`text-neutral-content md:hidden block m-3 align-baseline ${show&&'text-accent'}`} onClick={()=>setShow(!show)}>
                     <FiAlignJustify id='menuBtnIcon' className='text-4xl inline-block transition-all' style={{rotate:show?"180deg":'0deg'}}
                     onClick={()=>setShow(!show)}/> Menu
                 </button>
@@ -44,7 +44,7 @@ export default function Header() {
                 <ul 
                 id='linksMenu'
                 className={`
-                    text-lg  text-orange-200
+                    text-lg text-accent 
                     flex flex-col gap-6
                     items-center
                     justify-center
@@ -59,7 +59,7 @@ export default function Header() {
                     >
                     {links.map((link)=>{
                         const {href,label,id}=link;
-                        return <li key={id} className='hover:text-orange-500 transition 
+                        return <li key={id} className='hover:text-primary transition 
                         relative whitespace-nowrap'><Link href={href}>{label}</Link></li>
                     })}
                 </ul>

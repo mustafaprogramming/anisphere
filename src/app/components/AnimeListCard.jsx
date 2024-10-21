@@ -16,7 +16,7 @@ const AnimeListCard = ({anime,lastIndex=false,children}) => {
        <Image src={image} alt={title} width={60} height={76} quality={100} className="rounded-md" style={{minHeight:'76px',minWidth:'60px',maxHeight:'76px',maxWidth:'60px'}} />
        <div className="ms-5">
          <Link href={`/search/${id}`}>
-         <h3 className="font-semibold mb-3 text-sm hover:text-orange-300 line-clamp-2">{NameType?title:JpName|| 'N/A'}</h3>
+         <h3 className="font-semibold mb-3 text-sm hover:text-accent line-clamp-2">{NameType?title:JpName|| 'N/A'}</h3>
          </Link>
          {EpCount>0 && 
           <div className="flex items-center font-bold text-black text-xs gap-0.5 scale-90 ">

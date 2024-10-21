@@ -35,21 +35,21 @@ const Searches = ({ searchValue ,setSearchValue}) => {
   },[searchValue,topAll])
   if (!results) {
     
-    return  <aside className='bg-orange-900 w-full h-fit'>
-              <div className="loading w-full max-w-80 mx-auto min-h-20 flex relative">
-                <span className="spinner spinner1 bg-orange-500" style={{'--size':'30px'}}></span>
-                <span className="spinner spinner2 bg-orange-500" style={{'--size':'30px'}}></span>
-                <span className="spinner spinner3 bg-orange-500" style={{'--size':'30px'}}></span>
+    return  <aside className='bg-base-200 bg-opacity-80  w-full h-fit'>
+              <div className="loadingBox w-full max-w-80 mx-auto min-h-20 flex relative">
+                <span className="spinner spinner1 bg-primary" style={{'--size':'30px'}}></span>
+                <span className="spinner spinner2 bg-primary" style={{'--size':'30px'}}></span>
+                <span className="spinner spinner3 bg-primary" style={{'--size':'30px'}}></span>
               </div>
             </aside>
   }
   if(results.length<1){
-    return <aside className='bg-orange-900 p-5 xl:text-center font-semibold w-full text-orange-200'>
+    return <aside className='bg-base-200 bg-opacity-80  p-5 xl:text-center font-semibold w-full text-accent opacity-80'>
       No Results Found!
     </aside>
   }
   return (
-    <aside className={`flex flex-col bg-orange-900 h-fit w-full relative pt-1 ${!viewMore&&'pb-2'} text-orange-100`}>
+    <aside className={`flex flex-col bg-base-200  h-fit w-full relative pt-1 ${!viewMore&&'pb-2'} text-neutral`}>
       {results.map((item) => {
         const { image, title, JpName, id, premier, anime, EpDuration } = item
         return (
@@ -65,7 +65,7 @@ const Searches = ({ searchValue ,setSearchValue}) => {
               />
               <div className='ms-5'>
                   <Link href={`/search/${id}`} onClick={()=>setSearchValue('')}>
-                      <h3 className='font-semibold xl:text-sm hover:text-orange-300 line-clamp-1'>
+                      <h3 className='font-semibold xl:text-sm hover:text-accent line-clamp-1'>
                         {title || 'N/A'}
                       </h3>
                   </Link>
@@ -85,7 +85,7 @@ const Searches = ({ searchValue ,setSearchValue}) => {
           </article>
         )
       })}
-      {viewMore&&<Link href={`/result/?keyword=${searchValue}`} onClick={()=>setSearchValue('')} className='bg-orange-300 p-4 mt-2 text-orange-100 font-semibold text-lg text-center transition-all duration-300 ease-in hover:text-orange-500'>View all results<FaAngleRight className='inline-flex'/></Link>}
+      {viewMore&&<Link href={`/result/?keyword=${searchValue}`} onClick={()=>setSearchValue('')} className='bg-primary p-4 mt-2 text-neutral font-semibold text-lg text-center transition-all duration-300 ease-in hover:text-base-100'>View all results<FaAngleRight className='inline-flex'/></Link>}
     </aside>
   )
 }

@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic';
 
 const layout = ({children}) => {
   return (
-    <main className="w-full bg-orange-950">
+    <main className="w-full bg-base-300">
       <section className="h-screen overflow-x-hidden mx-auto max-w-fit ">
       <SecondHeader />
       {children}

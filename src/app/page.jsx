@@ -10,9 +10,9 @@ function DefaultPage() {
       <Hero />
       <section className=" relative min-w-full h-screen">
       <Info />
-      <div className='bg-black xs:text-base text-sm text-orange-100 xl:px-28 px-5 -mt-2 pb-12'>
+      <div className='bg-black xs:text-base text-sm text-neutral xl:px-28 px-5 -mt-2 pb-12'>
         <div>
-          <span className="text-orange-500 font-bold xs:text-lg text-base">Share AniSphere</span>
+          <span className="text-primary font-bold xs:text-lg text-base">Share AniSphere</span>
           <p>to your friends</p>
         </div>
         <aside className="flex flex-col gap-4 xl:max-w-4xl ">

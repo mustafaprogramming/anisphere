@@ -65,7 +65,7 @@ const SingleAnimePage = ({ params }) => {
         <article  className='flex sm:flex-row flex-col sm:p-14 p-3 sm:pt-20 pt-5 lg:w-4/5 lg:pr-20 items-start sm:scale-100 scale-75'>
           <div className='relative min-w-48 max-w-48 h-64 sm:mx-0 mx-auto'>
             {isAdult && (
-              <span className='bg-orange-500 absolute rounded-md p-1 text-xs text-white font-bold pr-2.5 left-2 top-2'>
+              <span className='bg-primary absolute rounded-md p-1 text-xs text-white font-bold pr-2.5 left-2 top-2'>
                 18+
               </span>
             )}
@@ -82,7 +82,7 @@ const SingleAnimePage = ({ params }) => {
             className='px-8 flex-1 flex flex-col sm:items-start
        items-center sm:mx-0 mx-auto sm:mt-0 '
           >
-            <div className='items-center gap-3 text-white xl:flex hidden sm:scale-100 scale-50'>
+            <div className='items-center gap-3  xl:flex hidden sm:scale-100 scale-50'>
               Home
               <span className='bg-white opacity-60 w-1 h-1 inline-flex rounded-lg'></span>
               Anime
@@ -91,11 +91,11 @@ const SingleAnimePage = ({ params }) => {
                 {NameType ? title : JpName || 'N/A'}
               </span>
             </div>
-            <h2 className='text-4xl font-semibold text-orange-100 capitalize my-5'>
+            <h2 className='text-4xl font-semibold text-neutral capitalize my-5'>
               {NameType ? title : JpName || 'N/A'}
             </h2>
             {EpCount && (
-              <div className='flex font-bold text-xs gap-0.5 items-center my-6'>
+              <div className='flex font-bold text-xs gap-0.5 items-center my-6 text-black'>
                 {PGrating && (
                   <span className='bg-white rounded-s-md px-1.5 py-0.5 uppercase text-nowrap '>
                     {PGrating}
@@ -130,17 +130,17 @@ const SingleAnimePage = ({ params }) => {
             <div className='flex gap-4 h-10 '>
               <Link
                 href={link}
-                className='bg-pink-300 py-3 px-5 rounded-full md:text-xl sm:text-lg text-sm flex items-center gap-2 text-nowrap'
+                className='bg-primary bg-opacity-80 py-3 px-5 rounded-full md:text-xl sm:text-lg text-sm flex items-center gap-2 text-nowrap text-black'
               >
                 <FaPlay className='text-sm' /> Watch now
               </Link>
-              <button className='bg-white py-3 px-5 rounded-full md:text-xl sm:text-lg text-sm flex items-center gap-2 text-nowrap'>
+              <button className='bg-white py-3 px-5 rounded-full md:text-xl sm:text-lg text-sm flex items-center gap-2 text-nowrap text-black'>
                 <FaPlus className='text-sm' /> Add to list
               </button>
             </div>
 
             <p
-              className={`my-5 text-sm text-orange-100 text-opacity-75 sm:block hidden ${
+              className={`my-5 text-sm text-neutral text-opacity-75 sm:block hidden ${
                 text && 'max-h-28 overflow-y-scroll'
               }`}
             >
@@ -161,18 +161,18 @@ const SingleAnimePage = ({ params }) => {
             <p
               className={`mb-8 mt-4 ${
                 text && 'mt-0'
-              } text-sm sm:block hidden  text-orange-100 text-opacity-75 `}
+              } text-sm sm:block hidden  text-neutral text-opacity-75 `}
             >
               AniSphere is the best site to watch <strong>{title}</strong>
             </p>
           </aside>
         </article>
         <aside
-          className='p-4 lg:py-10 lg:px-6 sm:mb-0  lg:-translate-x-5 bg-orange-400 bg-opacity-10 flex-1 h-auto flex flex-col text-orange-100 gap-2 relative'
+          className='p-4 lg:py-10 lg:px-6 sm:mb-0  lg:-translate-x-5 bg-secondary bg-opacity-10 flex-1 h-auto flex flex-col text-neutral gap-2 relative'
           style={{ fontSize: '13px' }}
         >
-          <p className=' sm:hidden block  text-orange-100 text-opacity-75 '>
-            <span className='mb-2 block text-sm text-orange-100  font-semibold'>
+          <p className=' sm:hidden block  text-neutral text-opacity-75 '>
+            <span className='mb-2 block text-sm text-neutral  font-semibold'>
               Overview:
             </span>
             {text ? description : description.substring(0, 200)}
@@ -209,7 +209,7 @@ const SingleAnimePage = ({ params }) => {
           </p>
 
           <p
-            className={`mt-3 sm:hidden block  text-orange-100 text-opacity-75 `}
+            className={`mt-3 sm:hidden block  text-neutral text-opacity-75 `}
           >
             AniSphere is the best site to watch <strong>{title}</strong>
           </p>

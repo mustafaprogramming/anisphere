@@ -81,7 +81,7 @@ export default async function RootLayout({
     links,topAll
   }
   return (
-    <html lang="en">
+    <html lang="en" data-theme="">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
