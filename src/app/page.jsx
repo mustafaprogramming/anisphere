@@ -1,9 +1,12 @@
+'use client';
 import Header from "./components/Header";
 import Hero from './components/Hero'
 import Info from './components/Info'
+import { useGlobalContext } from "./GlobalContext";
 export const dynamic = 'force-dynamic';
 
 function DefaultPage() {
+  const {theme}=useGlobalContext()
   return (
     <main >
       <Header/>
@@ -12,7 +15,7 @@ function DefaultPage() {
       <Info />
       <div className='bg-black xs:text-base text-sm text-neutral xl:px-28 px-5 -mt-2 pb-12'>
         <div>
-          <span className="text-primary font-bold xs:text-lg text-base">Share AniSphere</span>
+          <span className={`${theme==='aniLight'?'text-white':'text-primary'} font-bold xs:text-lg text-base`}>Share AniSphere</span>
           <p>to your friends</p>
         </div>
         <aside className="flex flex-col gap-4 xl:max-w-4xl ">

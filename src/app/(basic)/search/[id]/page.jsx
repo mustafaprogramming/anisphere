@@ -168,7 +168,7 @@ const SingleAnimePage = ({ params }) => {
           </aside>
         </article>
         <aside
-          className='p-4 lg:py-10 lg:px-6 sm:mb-0  lg:-translate-x-5 bg-secondary bg-opacity-10 flex-1 h-auto flex flex-col text-neutral gap-2 relative'
+          className='p-4 lg:py-10 lg:px-6 sm:mb-0  lg:-translate-x-5 bg-base-200 bg-opacity-50 flex-1 h-auto flex flex-col text-neutral gap-2 relative'
           style={{ fontSize: '13px' }}
         >
           <p className=' sm:hidden block  text-neutral text-opacity-75 '>

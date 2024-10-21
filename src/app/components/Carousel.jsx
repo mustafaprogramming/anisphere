@@ -74,7 +74,7 @@ const Carousel = ({array}) => {
       style='slider-right '
      }
      return (
-     <section key={id} className={`md:w-3/4 w-full md:bg-neutral-content bg-base-300 md:border border-white  md:mx-auto  absolute -translate-x-2/4 ${style} ${index!=Index&&'border-opacity-50 md:scale-75'} carousel h-full`} >
+     <section key={id} className={`md:w-3/4 w-full md:bg-neutral-content bg-base-300 md:border border-neutral  md:mx-auto  absolute -translate-x-2/4 ${style} ${index!=Index&&'border-opacity-50 md:scale-75'} carousel h-full`} >
           <aside className="absolute scale-90 bottom-0 p-8 xs:w-2/4 w-full flex flex-col xl:gap-4 md:gap-3 gap-2 h-fit" style={{zIndex:'4'}}>
             <h3 className="text-primary font-semibold text-lg ">#{index+1<10?'0'+(index+1):index+1} Spotlight</h3>
             <h1 className="font-bold md:my-2 text-neutral xl:text-4xl md:text-2xl text-xl  sm:w-96 w-64 sm:line-clamp-1 xl:line-clamp-2">{NameType?title:JpName}</h1>

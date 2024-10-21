@@ -6,7 +6,7 @@ import { FiAlignJustify } from "react-icons/fi";
 import { useGlobalContext } from '../GlobalContext';
 
 export default function Header() {
-    const {links}=useGlobalContext();
+    const {links,theme}=useGlobalContext();
     const [show,setShow]=useState(false);
     useEffect(()=>{
         const closeLinks=(e)=>{
@@ -19,9 +19,17 @@ export default function Header() {
     },[])
     return (
         <header className='flex justify-start md:justify-center w-full h-16 absolute z-50 select-none'>
+            <input
+            readOnly
+                  type="checkbox"
+                  name="theme-dropdown"
+                  className="theme-controller hidden btn btn-sm btn-block btn-ghost justify-start"
+                  aria-label="Default"
+                  checked={true}
+                  value={theme} />
             {/* logo */}
             <div className='ml-10 flex'>
-                <button id='menuBtn' className={`text-neutral-content md:hidden block m-3 align-baseline ${show&&'text-accent'}`} onClick={()=>setShow(!show)}>
+                <button id='menuBtn' className={`text-accent md:hidden block m-3 align-baseline ${show&&'text-accent'}`} onClick={()=>setShow(!show)}>
                     <FiAlignJustify id='menuBtnIcon' className='text-4xl inline-block transition-all' style={{rotate:show?"180deg":'0deg'}}
                     onClick={()=>setShow(!show)}/> Menu
                 </button>

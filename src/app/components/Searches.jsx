@@ -35,7 +35,7 @@ const Searches = ({ searchValue ,setSearchValue}) => {
   },[searchValue,topAll])
   if (!results) {
     
-    return  <aside className='bg-base-200 bg-opacity-80  w-full h-fit'>
+    return  <aside className='bg-base-200   w-full h-fit'>
               <div className="loadingBox w-full max-w-80 mx-auto min-h-20 flex relative">
                 <span className="spinner spinner1 bg-primary" style={{'--size':'30px'}}></span>
                 <span className="spinner spinner2 bg-primary" style={{'--size':'30px'}}></span>
@@ -44,7 +44,7 @@ const Searches = ({ searchValue ,setSearchValue}) => {
             </aside>
   }
   if(results.length<1){
-    return <aside className='bg-base-200 bg-opacity-80  p-5 xl:text-center font-semibold w-full text-accent opacity-80'>
+    return <aside className='bg-base-200   p-5 xl:text-center font-semibold w-full text-accent '>
       No Results Found!
     </aside>
   }

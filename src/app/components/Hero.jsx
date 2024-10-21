@@ -6,7 +6,10 @@ const Hero = () => {
     overflow-hidden " >
       <aside className="absolute w-full h-full bg-gradient-to-t from-black via-transparent to-black " >
           <div className="fixed w-full h-full flex 
-          bg-gradient-to-t from-black via-transparent to-black -z-50">
+          bg-gradient-to-t from-primary via-transparent to-primary -z-50">
+          <div className="fixed w-full h-full flex 
+          bg-gradient-to-t from-black via-transparent   to-black -z-40"></div>
+            
             <Image
             src="/sukuna.jpeg"
             alt="background"

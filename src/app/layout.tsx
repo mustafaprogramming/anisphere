@@ -81,9 +81,9 @@ export default async function RootLayout({
     links,topAll
   }
   return (
-    <html lang="en" data-theme="">
+    <html lang="en" >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
       <GlobalContext data={data}>
       {children}

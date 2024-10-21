@@ -25,7 +25,7 @@ const config: Config = {
   daisyui: {
     themes: [
       {
-        aniOriginal: {
+        aniDefault: {
           "neutral":  "#ffedd5",//100
           "accent": "#fdba74",// 300
           "secondary": "#fb923c",//400
@@ -48,19 +48,29 @@ const config: Config = {
         },
         aniLight: {
           ...require("daisyui/src/theming/themes")["light"],
-          "neutral":  "#0A2463",//100/
-          "accent": "#FFC482",// 300/
-          "secondary": "#FFC482",//400/
-          "primary": "#F9C846",//500/
-          "base-100": "#D7E8BA",//800/
-          "base-200":"#FFB35C",//900/
-          "base-300":"#FFF8E8",// 950/
-          "neutral-content":"#9D96B8",
+          "neutral":  "#090909",//100/
+          "accent": "#738A80",// 300/
+          "secondary": "#9BC4BC",//400/
+          "primary": "#4B5043",//500/
+          "base-100": "#8DDBE0",//800/
+          "base-200":"#A7DCCA",//900/
+          "base-300":"#EBFFF5",// 950/
+          "neutral-content":"#5D6F68",
+        },
+        aniPhonke: {
+          "neutral":  "#FFFFFF",//100/
+          "accent": "#FFBADE",// 300/
+          "secondary": "#FFBADE",//400/
+          "primary": "#FFBADE",//500/
+          "base-100": "#000000",//800/////
+          "base-200":"#2B2A3C",//900/
+          "base-300":"#201F31",// 950//////
+          "neutral-content":"#201F31",
         },
       },
     ],
   },
-  plugins: [require('daisyui')],
+  plugins: [require('daisyui'),],
 };
 
 export default config;

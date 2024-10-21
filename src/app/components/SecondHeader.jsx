@@ -32,7 +32,7 @@ const SignInAndSearch=({toggleSearch})=>{
         <button onClick={toggleSearch} className="1xl:hidden">
           <IoSearchSharp  className="text-3xl"/> 
         </button>
-       <button className="bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-base-200 py-2 px-3 xs:scale-100 xxs:scale-90 scale-75 rounded-lg  font-semibold text-neutral ">
+       <button className="bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-base-200 py-2 px-3 xs:scale-100 xxs:scale-90 scale-75 rounded-lg  font-semibold text-white ">
         <Link href='/login'>
         Sign In 
         </Link>
@@ -48,9 +48,9 @@ const Search=({searchValue,setSearchValue,searchValueOutput})=>{
           <input type="text" value={inputVal} onChange={(event)=>searchValueOutput(event.target.value)} className="py-2 ps-4 pe-24  flex-1 font-semibold text-base-200 outline-primary outline-2 hover:outline active:outline" placeholder="Search anime..." /> 
           <div className="absolute right-1 flex items-center gap-2">
           <Link href={`/result/?keyword=${searchValue}`} onClick={()=>setSearchValue('')}>
-            <IoSearchSharp  className="text-2xl text-primary hover:text-secondary active:text-base-300"/> 
+            <IoSearchSharp  className="text-2xl text-base-100 active:text-base-300"/> 
           </Link>
-          <Link href={`/filter`} className="bg-primary text-white my-2 px-2 py-0.5 text-sm rounded-md">
+          <Link href={`/filter`} className="bg-base-100 text-white my-2 px-2 py-0.5 text-sm rounded-md">
           filter
           </Link>
           </div>
@@ -87,7 +87,7 @@ const SearchBar=({showSearch,searchValue,setSearchValue,searchValueOutput})=>{
 
 const SecondHeader = () => {
   const [searchValue,setSearchValue]=useState('');
-  const {links,toggleName,NameType}=useGlobalContext();
+  const {links,toggleName,NameType,setTheme,theme}=useGlobalContext();
   const [show,setShow]=useState(false);
   const [showSearch,setShowSearch]=useState(false);
   const toggleSearch=()=>setShowSearch(!showSearch)
@@ -157,7 +157,9 @@ const SecondHeader = () => {
                   name="theme-dropdown"
                   className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                   aria-label="Default"
-                  value="aniOriginal" />
+                  checked={theme==="aniOriginal"}
+                  onChange={()=>setTheme('aniOriginal')}
+                  value={theme} />
               </li>
               <li>
                 <input
@@ -165,7 +167,9 @@ const SecondHeader = () => {
                   name="theme-dropdown"
                   className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                   aria-label="Dark"
-                  value="aniDark" />
+                  checked={theme==="aniDark"}
+                  onChange={()=>setTheme('aniDark')}
+                  value={theme} />
               </li>
               <li>
                 <input
@@ -174,7 +178,20 @@ const SecondHeader = () => {
                   className="theme-controller btn btn-sm btn-block btn-ghost justify-start
                   "
                   aria-label="Light"
-                  value="aniLight" />
+                  checked={theme==="aniLight"}
+                  onChange={()=>setTheme('aniLight')}
+                  value={theme} />
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  name="theme-dropdown"
+                  className="theme-controller btn btn-sm btn-block btn-ghost justify-start
+                  "
+                  aria-label="Phonke"
+                  checked={theme==="aniPhonke"}
+                  onChange={()=>setTheme('aniPhonke')}
+                  value={theme} />
               </li>
             </ul>
           </div>
