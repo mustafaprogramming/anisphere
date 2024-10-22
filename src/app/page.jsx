@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Hero from './components/Hero'
 import Info from './components/Info'
 import { useGlobalContext } from "./GlobalContext";
-export const dynamic = 'force-dynamic';
 
 function DefaultPage() {
   const {theme}=useGlobalContext()

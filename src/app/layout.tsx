@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import GlobalContext from './GlobalContext';
 import prisma from "../../utils/db";
+export const dynamic = 'force-dynamic';
 
 
 const prismaHandlers=async ()=>{
