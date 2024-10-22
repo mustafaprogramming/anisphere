@@ -7,7 +7,7 @@ export const useGlobalContext=()=>useContext(globalContext)
 const GlobalContext = ({data,children}) => {
   const [NameType,setNameType]=useState(true);
   const [theme,setTheme]=useState(
-    ()=>JSON.parse(window.localStorage.getItem('theme'))
+    ()=>JSON.parse(localStorage.getItem('theme'))
     ||
     'Default'
   );
