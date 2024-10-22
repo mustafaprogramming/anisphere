@@ -92,6 +92,10 @@ const SecondHeader = () => {
   const [showSearch,setShowSearch]=useState(false);
   const toggleSearch=()=>setShowSearch(!showSearch)
   const toggleShow=()=>setShow(!show);
+  const settingTheme=(val)=>{
+    window.localStorage.setItem('theme',JSON.stringify(val));
+    setTheme(val);
+  }
   const searchValueOutput=(search)=>{
     const newVal=search.split('#').join('%23').split("/").join('%2F').split("\\").join('%5C');
     setSearchValue(newVal)
@@ -138,9 +142,9 @@ const SecondHeader = () => {
           <div className="sm:hidden">
             <AnimeName NameType={NameType} toggleName={toggleName}/>
           </div>
-          <div className="dropdown relative">
-            <div tabIndex={0} role="button" className="bg-secondary rounded-lg flex gap-1 items-center py-1 px-3 mb-2">
-              Theme
+          <div className="dropdown relative text-xs text-center flex flex-col gap-1 pt-1">
+            <div tabIndex={0} role="button" className="bg-secondary rounded-sm flex gap-1 items-center py-0.5 px-1.5">
+              {theme}
               <svg
                 width="12px"
                 height="12px"
@@ -150,15 +154,16 @@ const SecondHeader = () => {
                 <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
               </svg>
             </div>
-            <ul tabIndex={0} className="dropdown-content bg-base-300 rounded-box z-[1] xs:w-52 w-fit p-2 shadow-2xl sm:-translate-x-0 xs:-translate-x-1/4">
+            Themes
+            <ul tabIndex={0} className="dropdown-content bg-base-300 rounded-box z-[1] sm:w-52 w-fit p-2 -top-1 shadow-2xl left-2/4 -translate-x-2/4">
               <li>
                 <input
                   type="radio"
                   name="theme-dropdown"
                   className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                   aria-label="Default"
-                  checked={theme==="aniOriginal"}
-                  onChange={()=>setTheme('aniOriginal')}
+                  checked={theme==="Default"}
+                  onChange={()=>settingTheme('Default')}
                   value={theme} />
               </li>
               <li>
@@ -167,8 +172,8 @@ const SecondHeader = () => {
                   name="theme-dropdown"
                   className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                   aria-label="Dark"
-                  checked={theme==="aniDark"}
-                  onChange={()=>setTheme('aniDark')}
+                  checked={theme==="Dark"}
+                  onChange={()=>settingTheme('Dark')}
                   value={theme} />
               </li>
               <li>
@@ -178,8 +183,8 @@ const SecondHeader = () => {
                   className="theme-controller btn btn-sm btn-block btn-ghost justify-start
                   "
                   aria-label="Light"
-                  checked={theme==="aniLight"}
-                  onChange={()=>setTheme('aniLight')}
+                  checked={theme==="Light"}
+                  onChange={()=>settingTheme('Light')}
                   value={theme} />
               </li>
               <li>
@@ -189,8 +194,8 @@ const SecondHeader = () => {
                   className="theme-controller btn btn-sm btn-block btn-ghost justify-start
                   "
                   aria-label="Phonke"
-                  checked={theme==="aniPhonke"}
-                  onChange={()=>setTheme('aniPhonke')}
+                  checked={theme==="Phonke"}
+                  onChange={()=>settingTheme('Phonke')}
                   value={theme} />
               </li>
             </ul>

@@ -6,7 +6,11 @@ export const useGlobalContext=()=>useContext(globalContext)
 
 const GlobalContext = ({data,children}) => {
   const [NameType,setNameType]=useState(true);
-  const [theme,setTheme]=useState('aniDefault');
+  const [theme,setTheme]=useState(
+    ()=>JSON.parse(window.localStorage.getItem('theme'))
+    ||
+    'Default'
+  );
 
   const toggleName=()=>setNameType(!NameType)
   return (

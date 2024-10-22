@@ -13,7 +13,7 @@ const SingleAnimePage = ({ params }) => {
   const [Anime, setAnime] = useState(null)
   const [text, setText] = useState(false)
   const [loading, setLoading] = useState(true)
-  const { all, top, NameType } = useGlobalContext()
+  const { all, top, NameType , theme } = useGlobalContext()
   useEffect(() => {
     setLoading(true);
     const Anime = all.find((anime) => anime.id === id)
@@ -65,7 +65,7 @@ const SingleAnimePage = ({ params }) => {
         <article  className='flex sm:flex-row flex-col sm:p-14 p-3 sm:pt-20 pt-5 lg:w-4/5 lg:pr-20 items-start sm:scale-100 scale-75'>
           <div className='relative min-w-48 max-w-48 h-64 sm:mx-0 mx-auto'>
             {isAdult && (
-              <span className='bg-primary absolute rounded-md p-1 text-xs text-white font-bold pr-2.5 left-2 top-2'>
+              <span className={`${theme==='Phonke'?'bg-orange-500':'bg-primary'} absolute rounded-md p-1 text-xs text-white font-bold pr-2.5 left-2 top-2`}>
                 18+
               </span>
             )}
@@ -91,7 +91,7 @@ const SingleAnimePage = ({ params }) => {
                 {NameType ? title : JpName || 'N/A'}
               </span>
             </div>
-            <h2 className='text-4xl font-semibold text-neutral capitalize my-5'>
+            <h2 className='text-4xl font-semibold text-neutral capitalize my-5 sm:text-start text-center'>
               {NameType ? title : JpName || 'N/A'}
             </h2>
             {EpCount && (

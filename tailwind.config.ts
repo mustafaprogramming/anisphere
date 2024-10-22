@@ -25,7 +25,7 @@ const config: Config = {
   daisyui: {
     themes: [
       {
-        aniDefault: {
+        Default: {
           "neutral":  "#ffedd5",//100
           "accent": "#fdba74",// 300
           "secondary": "#fb923c",//400
@@ -35,7 +35,7 @@ const config: Config = {
           "base-300":"#431407",// 950
           "neutral-content":"#0f172a",
         },
-        aniDark: {
+        Dark: {
           ...require("daisyui/src/theming/themes")["dark"],
           "neutral":  "#dbeafe",//100
           "accent": "#93c5fd",// 300
@@ -46,7 +46,7 @@ const config: Config = {
           "base-300":"#020617",// 950
           "neutral-content":"#0f172a",
         },
-        aniLight: {
+        Light: {
           ...require("daisyui/src/theming/themes")["light"],
           "neutral":  "#090909",//100/
           "accent": "#738A80",// 300/
@@ -57,7 +57,7 @@ const config: Config = {
           "base-300":"#EBFFF5",// 950/
           "neutral-content":"#5D6F68",
         },
-        aniPhonke: {
+        Phonke: {
           "neutral":  "#FFFFFF",//100/
           "accent": "#FFBADE",// 300/
           "secondary": "#FFBADE",//400/
@@ -70,7 +70,7 @@ const config: Config = {
       },
     ],
   },
-  plugins: [require('daisyui'),],
+  plugins: [require('daisyui')],
 };
 
 export default config;
