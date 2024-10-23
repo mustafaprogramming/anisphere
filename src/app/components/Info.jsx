@@ -14,7 +14,9 @@ const Info = () => {
     pt-24
     xs:pt-28 xs:px-11">
       <aside className='scale-90
-      xs:rounded-lg xs:py-5 xs:px-10 w-full sm:max-w-lg h-fit bg-base-200 bg-opacity-80' >
+      xs:rounded-lg xs:py-5 xs:px-10 w-full sm:max-w-lg h-fit 
+      relative overflow-hidden' >
+        <div className="absolute h-full w-full left-0 top-0 bg-gradient-to-r from-base-100 to-base-300 opacity-80"></div>
         <div className="sm:scale-100 xs:scale-90 scale-75">
           <h2 className='sm:text-5xl text-3xl font-bold text-neutral pt-2 mb-8'>Ani<span className='text-primary'>Sphere</span></h2>
           <div className='flex align-middle gap-3 mb-6'>

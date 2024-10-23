@@ -20,7 +20,7 @@ const Carousel = ({array}) => {
   }
   const id=setInterval(()=>{
    setIndex((prev)=>prev+1);
-  },2500);
+  },3500);
   return ()=>{
    clearInterval(id)
   }
@@ -42,12 +42,12 @@ const Carousel = ({array}) => {
     return <></>
   }
   return (
-   <main className="w-full xl:h-4/6 xs:h-3/6 h-2/5 xl:mt-24 xl:mb-0 md:my-10   relative overflow-x-hidden " style={{maxHeight:'450px'}}>
+   <main className="w-full xl:h-4/6 xs:h-3/6 h-2/5 xl:mt-24 xl:mb-0 md:my-10   relative overflow-x-hidden " style={{maxHeight:'450px',minHeight:'300px'}}>
     <div className="md:flex hidden font-semibold lg:text-5xl md:text-3xl text-2xl absolute justify-between items-center w-full h-full px-6" style={{zIndex:'5'}}>
      <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-secondary active:opacity-20 active:border active:border-primary  text-white active:text-primary" onClick={(event)=>sliderMove(event,'dec')}><FaAngleLeft /></button>
      <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-secondary active:opacity-20 active:border active:border-primary  text-white active:text-primary" onClick={(event)=>sliderMove(event)}><FaAngleRight /></button>
     </div>
-    <div className="md:hidden flex flex-col xs:gap-4 gap-2.5 absolute right-5 bottom-5 items-center" style={{zIndex:'8'}}>
+    <div className="md:hidden flex flex-col gap-4 absolute right-5 bottom-5 items-center z-40" style={{zIndex:'8'}}>
      {array.map((item,ind)=>{
       let style=''
       if(ind===Index){
