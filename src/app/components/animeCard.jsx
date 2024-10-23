@@ -33,7 +33,7 @@ const AnimeCard = ({anime}) => {
               <FaPlay className="text-white text-3xl left-2/4
               top-2/4 -translate-x-2/4 -translate-y-2/4 absolute"/>
             </a>}
-              {isAdult && <span className={`${theme==='Phonke'?'bg-orange-500':'bg-primary'} absolute rounded-md p-1 text-xs text-white font-bold pr-2.5 xl:left-2 left-3 top-2`}>18+</span>}
+              {isAdult && <span className={`${theme==='Phonk'?'bg-orange-500':'bg-primary'} absolute rounded-md p-1 text-xs text-white font-bold pr-2.5 xl:left-2 left-3 top-2`}>18+</span>}
               {EpCount>0 && 
               <div className="absolute flex left-2 bottom-2.5 font-bold text-xs gap-0.5 xl:scale-100 scale-90 text-black">
                 {sub && <span className="bg-green-300 rounded-s-md px-1.5 py-0.5 flex items-center gap-1"><FaClosedCaptioning /> {subEpCount}</span>}

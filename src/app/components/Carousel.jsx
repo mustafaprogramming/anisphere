@@ -47,7 +47,7 @@ const Carousel = ({array}) => {
      <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-secondary active:opacity-20 active:border active:border-primary  text-white active:text-primary" onClick={(event)=>sliderMove(event,'dec')}><FaAngleLeft /></button>
      <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-secondary active:opacity-20 active:border active:border-primary  text-white active:text-primary" onClick={(event)=>sliderMove(event)}><FaAngleRight /></button>
     </div>
-    <div className="md:hidden flex flex-col xs:gap-3 gap-2.5 absolute right-5 bottom-5 items-center" style={{zIndex:'8'}}>
+    <div className="md:hidden flex flex-col xs:gap-4 gap-2.5 absolute right-5 bottom-5 items-center" style={{zIndex:'8'}}>
      {array.map((item,ind)=>{
       let style=''
       if(ind===Index){
@@ -105,9 +105,11 @@ const Carousel = ({array}) => {
           </div>
           </aside>
           <div className="sm:right-0.5 sm:top-0.5 lg:w-2/6 md:w-2/5 sm:w-2/4 w-full  absolute" style={{height:'99%'}}>
-            <div className="absolute sm:p-2 py-1 w-full h-full bg-gradient-to-t from-base-300 md:from-neutral-content md:via-transparent via-transparent to-base-300 md:to-neutral-content" style={{zIndex:'1'}}>
+            <div className="absolute sm:p-2 py-1 w-full h-full 
+            carousel-to-t" style={{zIndex:'1'}}>
             </div>
-            <div className="absolute sm:p-2 py-1 w-full h-full bg-gradient-to-r from-base-300 md:from-neutral-content md:via-transparent via-transparent to-base-300 md:to-neutral-content" style={{zIndex:'2'}}>
+            <div className="absolute sm:p-2 py-1 w-full h-full 
+            carousel-to-r" style={{zIndex:'2'}}>
             </div>
             <Image src={image} alt={title} width={400} height={450} quality={100} 
             priority

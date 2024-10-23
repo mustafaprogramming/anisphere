@@ -193,9 +193,9 @@ const SecondHeader = () => {
                   name="theme-dropdown"
                   className="theme-controller btn btn-sm btn-block btn-ghost justify-start
                   "
-                  aria-label="Phonke"
-                  checked={theme==="Phonke"}
-                  onChange={()=>settingTheme('Phonke')}
+                  aria-label="Phonk"
+                  checked={theme==="Phonk"}
+                  onChange={()=>settingTheme('Phonk')}
                   value={theme} />
               </li>
             </ul>

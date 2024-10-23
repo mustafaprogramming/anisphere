@@ -57,7 +57,7 @@ const config: Config = {
           "base-300":"#EBFFF5",// 950/
           "neutral-content":"#5D6F68",
         },
-        Phonke: {
+        Phonk: {
           "neutral":  "#FFFFFF",//100/
           "accent": "#FFBADE",// 300/
           "secondary": "#FFBADE",//400/

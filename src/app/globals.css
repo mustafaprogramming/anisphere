@@ -75,6 +75,12 @@ input[type='text']{
 .carousel{
     transition: all ease-in 0.1s ;
 }
+.carousel-to-r{
+    background: linear-gradient(to right,var(--fallback-b3,oklch(var(--b3)/1)) var(--tw-gradient-to-position) , transparent  , transparent ,var(--fallback-b3,oklch(var(--b3)/1)) var(--tw-gradient-to-position));
+}
+.carousel-to-t{
+    background: linear-gradient(to top,var(--fallback-b3,oklch(var(--b3)/1)) var(--tw-gradient-to-position) , transparent , transparent , transparent ,var(--fallback-b3,oklch(var(--b3)/1)) var(--tw-gradient-to-position));
+}
 .infoHeight{
     height: 80vh;
 }
@@ -90,6 +96,13 @@ input[type='text']{
     }
     .carousel{
         transition:all ease-in-out 0.4s;
+    }
+    .carousel-to-r{
+        background: linear-gradient(to right,var(--fallback-nc,oklch(var(--nc)/1)) var(--tw-gradient-to-position) , transparent , transparent ,var(--fallback-nc,oklch(var(--nc)/1)) var(--tw-gradient-to-position));
+    }
+    .carousel-to-t{
+        background: linear-gradient(to top,var(--fallback-nc,oklch(var(--nc)/1)) var(--tw-gradient-to-position) , transparent , transparent , transparent , var(--fallback-nc,oklch(var(--nc)/1)) var(--tw-gradient-to-position) 
+        );
     }
 }
 @media (max-width: 480px) {

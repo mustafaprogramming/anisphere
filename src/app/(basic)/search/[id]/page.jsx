@@ -65,7 +65,7 @@ const SingleAnimePage = ({ params }) => {
         <article  className='flex sm:flex-row flex-col sm:p-14 p-3 sm:pt-20 pt-5 lg:w-4/5 lg:pr-20 sm:items-start sm:scale-100 scale-75 items-center'>
           <div className='relative min-w-48 max-w-48 h-64 '>
             {isAdult && (
-              <span className={`${theme==='Phonke'?'bg-orange-500':'bg-primary'} absolute rounded-md p-1 text-xs text-white font-bold pr-2.5 left-2 top-2`}>
+              <span className={`${theme==='Phonk'?'bg-orange-500':'bg-primary'} absolute rounded-md p-1 text-xs text-white font-bold pr-2.5 left-2 top-2`}>
                 18+
               </span>
             )}
