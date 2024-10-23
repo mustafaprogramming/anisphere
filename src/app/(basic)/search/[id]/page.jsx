@@ -62,8 +62,8 @@ const SingleAnimePage = ({ params }) => {
             style={{ backgroundImage: `url(${image})` }}
           ></div>
         </div>
-        <article  className='flex sm:flex-row flex-col sm:p-14 p-3 sm:pt-20 pt-5 lg:w-4/5 lg:pr-20 items-start sm:scale-100 scale-75'>
-          <div className='relative min-w-48 max-w-48 h-64 sm:mx-0 mx-auto'>
+        <article  className='flex sm:flex-row flex-col sm:p-14 p-3 sm:pt-20 pt-5 lg:w-4/5 lg:pr-20 sm:items-start sm:scale-100 scale-75 items-center'>
+          <div className='relative min-w-48 max-w-48 h-64 '>
             {isAdult && (
               <span className={`${theme==='Phonke'?'bg-orange-500':'bg-primary'} absolute rounded-md p-1 text-xs text-white font-bold pr-2.5 left-2 top-2`}>
                 18+
@@ -79,7 +79,7 @@ const SingleAnimePage = ({ params }) => {
             />
           </div>
           <aside
-            className='px-8 flex-1 flex flex-col sm:items-start
+            className='xs:px-8 flex-1 flex flex-col sm:items-start
        items-center sm:mx-0 mx-auto sm:mt-0 '
           >
             <div className='items-center gap-3  xl:flex hidden sm:scale-100 scale-50'>
@@ -116,7 +116,7 @@ const SingleAnimePage = ({ params }) => {
                     <FaMicrophone /> {dubEpCount}
                   </span>
                 )}
-                <span className='bg-slate-400 bg-opacity-50 px-1.5 py-0.5 text-white'>
+                <span className='bg-slate-400 bg-opacity-50 px-1.5 py-0.5 text-white xs:block hidden'>
                   {EpCount}
                 </span>
                 <span className='bg-white opacity-60 w-1 h-1 inline-flex rounded-lg mx-2'></span>

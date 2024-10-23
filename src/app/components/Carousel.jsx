@@ -47,15 +47,15 @@ const Carousel = ({array}) => {
      <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-secondary active:opacity-20 active:border active:border-primary  text-white active:text-primary" onClick={(event)=>sliderMove(event,'dec')}><FaAngleLeft /></button>
      <button className="opacity-50 hover:opacity-100 bg-white bg-opacity-20 h-2/4 border border-white active:bg-secondary active:opacity-20 active:border active:border-primary  text-white active:text-primary" onClick={(event)=>sliderMove(event)}><FaAngleRight /></button>
     </div>
-    <div className="md:hidden flex flex-col xs:gap-3 gap-2 absolute right-5 bottom-5 items-center" style={{zIndex:'8'}}>
+    <div className="md:hidden flex flex-col xs:gap-3 gap-2.5 absolute right-5 bottom-5 items-center" style={{zIndex:'8'}}>
      {array.map((item,ind)=>{
       let style=''
       if(ind===Index){
-       style='bg-secondary sm:w-3.5 sm:h-3.5 w-3 h-3'
+       style='bg-secondary w-3.5 h-3.5 '
       }else if(ind===Index+1 || ind===Index-1){
-       style='bg-accent bg-opacity-80 sm:w-3 sm:h-3 w-2.5 h-2.5'
+       style='bg-accent bg-opacity-80 w-3 h-3 '
       }else{
-       style='bg-accent bg-opacity-50 sm:w-2.5 sm:h-2.5 w-2 h-2'
+       style='bg-accent bg-opacity-50 w-2.5 h-2.5 '
       }
 
       return (
@@ -77,7 +77,7 @@ const Carousel = ({array}) => {
      <section key={id} className={`md:w-3/4 w-full md:bg-neutral-content bg-base-300 md:border border-neutral  md:mx-auto  absolute -translate-x-2/4 ${style} ${index!=Index&&'border-opacity-50 md:scale-75'} carousel h-full`} >
           <aside className="absolute scale-90 bottom-0 p-8 xs:w-2/4 w-full flex flex-col xl:gap-4 md:gap-3 gap-2 h-fit" style={{zIndex:'4'}}>
             <h3 className="text-primary font-semibold text-lg ">#{index+1<10?'0'+(index+1):index+1} Spotlight</h3>
-            <h1 className="font-bold md:my-2 text-neutral xl:text-4xl md:text-2xl text-xl  sm:w-96 w-64 sm:line-clamp-1 xl:line-clamp-2">{NameType?title:JpName}</h1>
+            <h1 className="font-bold md:my-2 text-neutral xl:text-4xl md:text-2xl text-xl  sm:w-96 w-64 sm:line-clamp-1 xl:line-clamp-2 xxs:line-clamp-2 line-clamp-1">{NameType?title:JpName}</h1>
             <div className="sm:flex gap-2 text-white xl:text-base lg:text-sm text-xs hidden xl:flex-row flex-col">
              <div className="flex gap-2 xl:my-0 ">
              <p className="flex gap-0.5 items-center"><FaCirclePlay/>TV</p>

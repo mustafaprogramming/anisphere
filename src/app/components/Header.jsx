@@ -10,7 +10,8 @@ export default function Header() {
     const [show,setShow]=useState(false);
     useEffect(()=>{
         const closeLinks=(e)=>{
-            if(e.target.id!=='linksMenu'&&e.target.id!=='menuBtn' && e.target.id!=='menuBtnIcon'){
+            if(e.target.id!=='linksMenu'&&e.target.id!=='menuBtn'){
+                console.log(e.target)
                 setShow(false)
             }
         };
@@ -30,8 +31,8 @@ export default function Header() {
             {/* logo */}
             <div className='ml-10 flex'>
                 <button id='menuBtn' className={`text-accent md:hidden block m-3 align-baseline ${show&&'text-accent'}`} onClick={()=>setShow(!show)}>
-                    <FiAlignJustify id='menuBtnIcon' className='text-4xl inline-block transition-all' style={{rotate:show?"180deg":'0deg'}}
-                    onClick={()=>setShow(!show)}/> Menu
+                    <FiAlignJustify className='text-4xl inline-block transition-all pointer-events-none' style={{rotate:show?"180deg":'0deg'}}
+                    /> Menu
                 </button>
             </div>
             {/* links */}

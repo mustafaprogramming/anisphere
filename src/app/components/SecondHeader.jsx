@@ -32,7 +32,7 @@ const SignInAndSearch=({toggleSearch})=>{
         <button onClick={toggleSearch} className="1xl:hidden">
           <IoSearchSharp  className="text-3xl"/> 
         </button>
-       <button className="bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-base-200 py-2 px-3 xs:scale-100 xxs:scale-90 scale-75 rounded-lg  font-semibold text-white ">
+       <button className="bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-base-200 py-2 px-3 xs:scale-100 scale-90 xxs:block hidden rounded-lg  font-semibold text-white ">
         <Link href='/login'>
         Sign In 
         </Link>
@@ -108,10 +108,10 @@ const SecondHeader = () => {
     <div className="flex items-center w-fit gap-7">
       <div className="flex items-center mr-7">
         <button className={`text-neutral m-2
-          ml-0 `} onClick={toggleShow}>
-                      <FiAlignJustify className=' sm:text-5xl xs:text-3xl text-2xl inline-block transition-all' style={{rotate:show?"180deg":'0deg'}}/> 
+          ml-0 mr-4 `} onClick={toggleShow}>
+                      <FiAlignJustify className=' sm:text-5xl text-4xl  inline-block transition-all' style={{rotate:show?"180deg":'0deg'}}/> 
         </button>
-        <Link href='/' className=" sm:text-4xl xs:text-2xl text-1xl font-bold text-neutral">
+        <Link href='/' className=" sm:text-4xl xs:text-2xl text-lg font-bold text-neutral">
           Ani
           <span className="text-primary">Sphere</span>
         </Link>
