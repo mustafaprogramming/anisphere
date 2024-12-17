@@ -53,7 +53,7 @@ export default function Header() {
                 <ul 
                 id='linksMenu'
                 className={`
-                    text-lg text-accent 
+                    text-lg text-neutral 
                     flex flex-col gap-6
                     items-center
                     justify-center
