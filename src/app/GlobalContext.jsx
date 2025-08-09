@@ -9,7 +9,7 @@ const GlobalContext = ({data,children}) => {
   const [NameType,setNameType]=useState(true);
   const [theme,setTheme]=useState('Phonk');
   useEffect(()=>{
-    let value = JSON.parse(localStorage.getItem('theme')) || 'Phonk'
+    let value = localStorage.getItem('theme') || 'Phonk'
     setTheme(value)
   },[]);
   const toggleName=()=>setNameType(!NameType)

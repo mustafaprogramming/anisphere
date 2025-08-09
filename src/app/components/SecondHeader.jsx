@@ -93,7 +93,7 @@ const SecondHeader = () => {
   const toggleSearch=()=>setShowSearch(!showSearch)
   const toggleShow=()=>setShow(!show);
   const settingTheme=(val)=>{
-    localStorage.setItem('theme',JSON.stringify(val));
+    localStorage.setItem('theme',val);
     setTheme(val);
   }
   const searchValueOutput=(search)=>{
