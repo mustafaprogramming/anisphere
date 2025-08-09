@@ -2,11 +2,7 @@
   "name": "class4",
   "version": "0.1.0",
   "private": true,
-  "prisma": {
-    "seed": "ts-node ./prisma/seed.ts"
-  },
   "scripts": {
-    "prisma:seed": "prisma db seed",
     "dev": "next dev",
     "build": "npx prisma generate && next build",
     "start": "next start",
